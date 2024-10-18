@@ -1,4 +1,7 @@
 #include <stdio.h>
-void main() {
-    
+#include "tridimensionales.c"
+
+int main() {
+    cubo_superficie();
+    return 0;
 }
