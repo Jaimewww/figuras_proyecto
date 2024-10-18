@@ -30,6 +30,7 @@ double cilindro_superficie(){
     scanf("%lf", &radio);
     if(radio && altura <= 0){
         printf("Ningun valor puede ser menor o igual a 0");
+        return 1;
 
     } else{
       superficie = (2*PI)*(altura+radio);
