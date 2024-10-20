@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "tridimensionales.c"
+#include "bidimensionales.c"
 
 void main()
 {
-    esfera_superficie();
+    circulo_area();
 }
