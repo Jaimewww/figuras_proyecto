@@ -82,7 +82,7 @@ float octagono_area(){
 float pentagono_area(){
     float lado_penta, superficie;
     lado_penta = validacion("Ingrese el valor de un lado del pentagono en metros \n");
-    superficie =(1/4) * sqrt(5(5 + 2 sqrt (5)))*(lado_penta*lado_penta);
+    superficie =(1/4) * sqrt(5*(5 + 2)*(sqrt(5)))*(lado_penta*lado_penta);
     printf("La superficie del pentagono es %.2f m cuadrados", superficie);
     return superficie;
 }
