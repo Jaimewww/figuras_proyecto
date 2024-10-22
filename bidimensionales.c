@@ -25,16 +25,16 @@ float cuadrado_area(){
 float decagono_area(){
     float lado_deca, superficie;
     lado_deca = validacion("Ingrese el valor de un lado del decagono \n");
-    superficie = (5/2) * (lado_deca*lado_deca) * cot(PI/10);
-    printf("La superficie del decagono es %.2f m cuadrados", superficie);
+    superficie = 0.25 * lado_deca * (lado_deca*lado_deca) * cot(PI/10);
+    printf("La superficie del decagono es %.2f Cm cuadrados", superficie);
     return superficie;
 }
 //4AREA DEL DODECAGONO - Alex
 float dodecagono_area(){
     float lado_dode, superficie;
     lado_dode = validacion("Ingrese el valor de un lado del dodecagono \n");
-    superficie =3 * (lado_dode) * cot(PI/12);
-    printf("La superficie del dodecagono es %.2f m cuadrados", superficie);
+    superficie = 3 * (lado_dode) * cot(PI/12);
+    printf("La superficie del dodecagono es %.2f Cm cuadrados", superficie);
     return superficie;
 }
 //5AREA DEL ELIPSE - Alex
@@ -43,14 +43,14 @@ float elipse_area(){
     semi_mayor = validacion("Ingrese el valor del semieje mayor en metros \n");
     semi_menor = validacion("Ingrese el valor del semieje menor en metros \n");
     superficie =PI * semi_mayor * semi_menor;
-    printf("La superficie de la elipse es %.2f m cuadrados", superficie);
+    printf("La superficie de la elipse es %.2f Cm cuadrados", superficie);
     return superficie;
 }
 //6AREA DEL ENNEAGONO - Alex
 float enneagono_area(){
     float lado_enne, superficie;
     lado_enne = validacion("Ingrese el valor de un lado del enneagono en metros \n");
-    superficie =(9/4) * (lado_enne) * cot(PI/9);
+    superficie = (9/4) * (lado_enne) * cot(PI/9);
     printf("La superficie del enneagono es %.2f m cuadrados", superficie);
     return superficie;
 }
@@ -58,7 +58,7 @@ float enneagono_area(){
 float heptagono_area(){
     float lado_hep, superficie;
     lado_hep = validacion("Ingrese el valor de un lado del heptagono en metros \n");
-    superficie =(7/4) * (lado_hep*lado_hep) * cot(PI/7);
+    superficie = (7/4) * (lado_hep*lado_hep) * cot(PI/7);
     printf("La superficie del heptagono es %.2f m cuadrados", superficie);
     return superficie;
 }
@@ -66,7 +66,7 @@ float heptagono_area(){
 float hexagono_area(){
     float lado_hexa, superficie;
     lado_hexa = validacion("Ingrese el valor de un lado del hexagono en metros \n");
-    superficie =(3 sqrt(3/2)) * (lado_hexa*lado_hexa);
+    superficie =(3*(sqrt(3/2))) * (lado_hexa*lado_hexa);
     printf("La superficie del hexagono es %.2f m cuadrados", superficie);
     return superficie;
 }
@@ -82,8 +82,8 @@ float octagono_area(){
 float pentagono_area(){
     float lado_penta, superficie;
     lado_penta = validacion("Ingrese el valor de un lado del pentagono en metros \n");
-    superficie =(1/4) * sqrt(5*(5 + 2)*(sqrt(5)))*(lado_penta*lado_penta);
-    printf("La superficie del pentagono es %.2f m cuadrados", superficie);
+    superficie = (1/4) * sqrt(5*(5 + 2)*(sqrt(5)))*(lado_penta*lado_penta);
+    printf("La superficie del pentagono es %.2f Cm cuadrados", superficie);
     return superficie;
 }
 #endif
