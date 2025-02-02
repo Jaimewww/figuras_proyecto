@@ -6,13 +6,13 @@ package view;
 
 import controller.F_Soledad;
 import javax.swing.UIManager;
-import fonts.Fonts;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import utiles.MusicLoader;
-import utiles.Utiles;
-import javax.swing.*;
+import fonts.Fonts;
+import javax.swing.*; 
+import utiles.Utiles; 
 /**
  *
  * @author JAIMEUNL
