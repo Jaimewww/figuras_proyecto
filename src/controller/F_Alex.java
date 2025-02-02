@@ -11,6 +11,10 @@ import utiles.Utiles;
  * @author JAIMEUNL
  */
 public class F_Alex {
+<<<<<<< HEAD
+=======
+
+>>>>>>> d90f4caa0c56266bee09c7668e57905dba832d52
     // Paralelogramo Alex_Sigcho
     public Float paralelogramo(Float base, Float altura) {
         Float area = base * altura;
