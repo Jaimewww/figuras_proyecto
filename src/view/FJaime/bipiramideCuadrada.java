@@ -5,7 +5,6 @@
 package view.FJaime;
 
 import controller.F_Jaime;
-import view.FSoledad.*;
 import fonts.Fonts;
 import utiles.Utiles;
 import view.Main_Frame;
@@ -15,12 +14,12 @@ import view.Menu_Tridi_B_I;
  *
  * @author JAIMEUNL
  */
-public class areaBipiramideCuadrada extends javax.swing.JPanel {
+public class bipiramideCuadrada extends javax.swing.JPanel {
 
     /**
      * Creates new form Menu_Figuras
      */
-    public areaBipiramideCuadrada() {
+    public bipiramideCuadrada() {
         initComponents();
         btn_Regresar.setVisible(true);
     }

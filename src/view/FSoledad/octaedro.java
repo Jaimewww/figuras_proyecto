@@ -50,7 +50,6 @@ public class octaedro extends javax.swing.JPanel {
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("AREA OCTAEDRO");
 
         btn_Regresar.setText("Regresar");
@@ -75,7 +74,8 @@ public class octaedro extends javax.swing.JPanel {
                 txtaristaActionPerformed(evt);
             }
         });
-
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel1.setText("INGRESE EL VALOR DE LA ARISTA: ");
         btnAreaOctaedro.setBackground(new java.awt.Color(0, 102, 255));
         btnAreaOctaedro.setText("GENERAR");
         btnAreaOctaedro.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +156,7 @@ public class octaedro extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
