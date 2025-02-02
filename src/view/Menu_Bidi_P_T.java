@@ -20,6 +20,7 @@ import view.FAlex.areaTriangulo;
 import view.FAlex.areaTrianguloequilatero;
 import view.FAlex.areaTrianguloescaleno;
 import view.FAlex.areaTriqueta;
+import view.FAlex.*;
 /**
  *
  * @author JAIMEUNL
@@ -130,61 +131,84 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
         Menu_Bidimensionales menu_Bidimensionales = new Menu_Bidimensionales();
-        Main_Frame.showPanel(bg, menu_Bidimensionales);
+        Main_Frame.showPanel(this, menu_Bidimensionales);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
     private void btnabrircalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnabrircalActionPerformed
         // TODO add your handling code here:
-        seleccion(cbxfigurasA.getSelectedItem().toString());
+         String figura = cbxfigurasA.getSelectedItem().toString();
+        seleccione(figura);
     }//GEN-LAST:event_btnabrircalActionPerformed
 public void regresar(JPanel panel){
         Main_Frame.showPanel(this, panel);
     }
     
-    public void seleccion(String figura){
+    public void seleccione(String figura){
         switch (figura){
             case "Paralelogramo":
                 areaParalelogramo paralelogramo = new areaParalelogramo();
-                Main_Frame.showPanel(bg, paralelogramo);
-            case "Pentagono":
+                Main_Frame.showPanel(this, paralelogramo);
+                break;
+            case "Pentágono":
                 areaPentagono pentagono = new areaPentagono();
-                Main_Frame.showPanel(bg, pentagono);
+                Main_Frame.showPanel(this, pentagono);
+                break;
+            case "Polígono regular":
+                areaPoligonoregular poligonoregular = new areaPoligonoregular();
+                Main_Frame.showPanel(this, poligonoregular);
+                break;
+            case "Rectángulo":
+                areaRectangulo rectangulo = new areaRectangulo();
+                Main_Frame.showPanel(this, rectangulo);
+                break;
             case "Rombo":
                 areaRombo rombo = new areaRombo();
-                Main_Frame.showPanel(bg, rombo);
+                Main_Frame.showPanel(this, rombo);
+                break;
             case "Romboide":
                 areaRomboide romboide= new areaRomboide();
-                Main_Frame.showPanel(bg, romboide);
+                Main_Frame.showPanel(this, romboide);
+                break;
             case "Sector circular":
                 areaSectorcircular sectorcircular = new areaSectorcircular();
-                Main_Frame.showPanel(bg, sectorcircular);
+                Main_Frame.showPanel(this, sectorcircular);
+                break;
             case "Segmento circular":
                 areaSegmentocircular segmentociecular = new areaSegmentocircular();
-                Main_Frame.showPanel(bg, segmentociecular);
+                Main_Frame.showPanel(this, segmentociecular);
+                break;
             case "Segmento elíptico":
                 areaSegmentoeliptico segmentoeliptico = new areaSegmentoeliptico();
-                Main_Frame.showPanel(bg, segmentoeliptico);
+                Main_Frame.showPanel(this, segmentoeliptico);
+                break;
             case "Semicírculo":
                 areaSemicirculo semicirculo = new areaSemicirculo();
-                Main_Frame.showPanel(bg, semicirculo);
+                Main_Frame.showPanel(this, semicirculo);
+                break;
             case "Trapecio circular":
                 areaTrapeciocircular trapeciocircular = new areaTrapeciocircular();
-                Main_Frame.showPanel(bg, trapeciocircular);
+                Main_Frame.showPanel(this, trapeciocircular);
+                break;
             case "Trapecio isósceles":
                 areaTrapecioisoceles trapeciosisoceles = new areaTrapecioisoceles();
-                Main_Frame.showPanel(bg, trapeciosisoceles);
+                Main_Frame.showPanel(this, trapeciosisoceles);
+                break;
             case "Triángulo":
                 areaTriangulo triangulo = new areaTriangulo();
-                Main_Frame.showPanel(bg, triangulo);
+                Main_Frame.showPanel(this, triangulo);
+                break;
             case "Triángulo equilátero":
                 areaTrianguloequilatero trianguloequilatero = new areaTrianguloequilatero();
-                Main_Frame.showPanel(bg, trianguloequilatero);
+                Main_Frame.showPanel(this, trianguloequilatero);
+                break;
             case "Triángulo escaleno":
                 areaTrianguloescaleno trianguloescaleno = new areaTrianguloescaleno();
-                Main_Frame.showPanel(bg, trianguloescaleno);
+                Main_Frame.showPanel(this, trianguloescaleno);
+                break;
             case "Triqueta":
                 areaTriqueta triqueta = new areaTriqueta();
-                Main_Frame.showPanel(bg, triqueta);
+                Main_Frame.showPanel(this, triqueta);
+                break;
         }
                 
     }
