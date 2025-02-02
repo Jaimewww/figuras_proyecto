@@ -183,18 +183,32 @@ public class Menu_Tridi_B_I extends javax.swing.JPanel {
                 Main_Frame.showPanel(this, VDodecaedro);
                 break;
             case "Elipsoide":
+                elipsoide Elipsoide = new elipsoide();
+                Main_Frame.showPanel(this, Elipsoide);
                 break;
             case "Esfera hueca":
+                esferaHueca EsferaHueca = new esferaHueca();
+                Main_Frame.showPanel(this, EsferaHueca);
                 break;
             case "Esfera inclinada":
+                esferaInclinada EsfeInclinada = new esferaInclinada();
+                Main_Frame.showPanel(this, EsfeInclinada);
                 break;
             case "Esferoide oblato":
+                esferoideOblato EsferoideOblato = new esferoideOblato();
+                Main_Frame.showPanel(this, EsferoideOblato);
                 break;
             case "Hemisfera":
+                hemisfera Hemisfera = new hemisfera();
+                Main_Frame.showPanel(this, Hemisfera);
                 break;
             case "Icosaedro (Área)":
+                Aicosaedro aicosaedro = new Aicosaedro();
+                Main_Frame.showPanel(this, aicosaedro);
                 break;
             case "Icosaedro (Volumen)":
+                Vicosaedro vicosaedro = new Vicosaedro();
+                Main_Frame.showPanel(this, vicosaedro);
                 break;
         }
                 
