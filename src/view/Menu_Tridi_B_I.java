@@ -151,8 +151,11 @@ public class Menu_Tridi_B_I extends javax.swing.JPanel {
                 Main_Frame.showPanel(this, CilindroEliptico);
                 break;
             case "Cilindro hueco":
+                cilindroHueco CilindroHueco = new cilindroHueco();
+                Main_Frame.showPanel(this, CilindroHueco);
                 break;
             case "Cilindro inclinado":
+                
                 break;
             case "Cono":
                 break;

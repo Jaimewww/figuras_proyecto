@@ -164,6 +164,6 @@ public class F_Jaime{
         //R : Radio exterior
         //r : Radio interior
         //h : Altura
-        return 
+        return Utiles.redondear((float)((2 * Math.PI * R * h) + (2 * Math.PI * r * h) + (2 * Math.PI) * (Math.pow(R, 2) - Math.pow(r, 2))));
     }
 }
