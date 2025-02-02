@@ -11,7 +11,7 @@ package controller;
 public class F_Jaime{
     
     //Octagono regular con apotema - Jaime
-    public static float ejecutarOctagonoRegularA(float s, float a) {
+    public static float ejecutarOctagonoRegular(float s, float a) {
         return ((7 * a) * s) / 2;
     }
     
