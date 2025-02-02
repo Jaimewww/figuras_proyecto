@@ -53,7 +53,7 @@ public class areaTriqueta extends javax.swing.JPanel {
         bg.setPreferredSize(new java.awt.Dimension(610, 240));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel3.setText("AREA ROMBO");
+        jLabel3.setText("AREA TRIQUETA");
 
         btn_Regresar.setBackground(new java.awt.Color(255, 0, 0));
         btn_Regresar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -176,7 +176,7 @@ public class areaTriqueta extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
