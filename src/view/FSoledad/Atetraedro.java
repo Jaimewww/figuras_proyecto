@@ -4,12 +4,10 @@
  */
 package view.FSoledad;
 
-import controller.F_Jaime;
 import controller.F_Soledad;
 import fonts.Fonts;
 import utiles.Utiles;
 import view.Main_Frame;
-import view.Menu_Tridi_B_I;
 import view.Menu_Tridi_O_T;
 
 /**
