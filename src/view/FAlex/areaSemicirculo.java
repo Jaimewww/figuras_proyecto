@@ -5,7 +5,10 @@
 package view.FAlex;
 
 import fonts.Fonts;
-
+import controller.F_Alex;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Bidi_P_T;
 /**
  *
  * @author JAIMEUNL
@@ -34,7 +37,7 @@ public class areaSemicirculo extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
-        txtbase = new java.awt.TextField();
+        txtradio = new java.awt.TextField();
         jLabel1 = new javax.swing.JLabel();
         btngenerar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -59,10 +62,10 @@ public class areaSemicirculo extends javax.swing.JPanel {
             }
         });
 
-        txtbase.setBackground(new java.awt.Color(255, 255, 204));
-        txtbase.addActionListener(new java.awt.event.ActionListener() {
+        txtradio.setBackground(new java.awt.Color(255, 255, 204));
+        txtradio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtbaseActionPerformed(evt);
+                txtradioActionPerformed(evt);
             }
         });
 
@@ -72,6 +75,11 @@ public class areaSemicirculo extends javax.swing.JPanel {
         btngenerar.setBackground(new java.awt.Color(255, 255, 153));
         btngenerar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btngenerar.setText("GENERAR");
+        btngenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngenerarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SEMICIRCULO.png"))); // NOI18N
 
@@ -104,7 +112,7 @@ public class areaSemicirculo extends javax.swing.JPanel {
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(79, 79, 79)
-                                .addComponent(txtbase, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtradio, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
                         .addComponent(btn_Regresar)
@@ -134,7 +142,7 @@ public class areaSemicirculo extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel4)
                                 .addGap(18, 18, 18))))
-                    .addComponent(txtbase, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtradio, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -151,13 +159,23 @@ public class areaSemicirculo extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtbaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbaseActionPerformed
+    private void txtradioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtradioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtbaseActionPerformed
+    }//GEN-LAST:event_txtradioActionPerformed
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
+        Menu_Bidi_P_T menu_Bidi_P_T = new Menu_Bidi_P_T();
+        Main_Frame.showPanel(bg, menu_Bidi_P_T);
     }//GEN-LAST:event_btn_RegresarActionPerformed
+
+    private void btngenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngenerarActionPerformed
+        // TODO add your handling code here:
+        if(Utiles.validate(txtradio.getText())){
+            Float resulatado = F_Alex.semicirculo(Utiles.transformStringFloat(txtradio.getText()));
+            txtarea.setText(resulatado.toString());
+        }
+    }//GEN-LAST:event_btngenerarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -169,6 +187,6 @@ public class areaSemicirculo extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel txtarea;
-    private java.awt.TextField txtbase;
+    private java.awt.TextField txtradio;
     // End of variables declaration//GEN-END:variables
 }

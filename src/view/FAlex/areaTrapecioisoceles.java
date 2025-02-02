@@ -5,7 +5,10 @@
 package view.FAlex;
 
 import fonts.Fonts;
-
+import controller.F_Alex;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Bidi_P_T;
 /**
  *
  * @author JAIMEUNL
@@ -87,6 +90,11 @@ public class areaTrapecioisoceles extends javax.swing.JPanel {
         btngenerar.setBackground(new java.awt.Color(255, 153, 102));
         btngenerar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btngenerar.setText("GENERAR");
+        btngenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngenerarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/TRAPECIOISOSCELES.png"))); // NOI18N
 
@@ -133,9 +141,7 @@ public class areaTrapecioisoceles extends javax.swing.JPanel {
                                             .addComponent(jLabel5))))
                                 .addGap(1, 1, 1)
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(bgLayout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel6)
                                     .addGroup(bgLayout.createSequentialGroup()
                                         .addComponent(txtaltura, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 9, Short.MAX_VALUE)))))
@@ -189,7 +195,7 @@ public class areaTrapecioisoceles extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 240, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -203,11 +209,21 @@ public class areaTrapecioisoceles extends javax.swing.JPanel {
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
+        Menu_Bidi_P_T menu_Bidi_P_T = new Menu_Bidi_P_T();
+        Main_Frame.showPanel(bg, menu_Bidi_P_T);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
     private void txtalturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtalturaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtalturaActionPerformed
+
+    private void btngenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngenerarActionPerformed
+        // TODO add your handling code here:
+        if(Utiles.validate(txtaltura.getText()) && Utiles.validate(txtbasemayor.getText()) && Utiles.validate(txtbasemenor.getText())){
+            Float resulatado = F_Alex.trapecioIsosceles(Utiles.transformStringFloat(txtaltura.getText()), Utiles.transformStringFloat(txtbasemayor.getText()),  Utiles.transformStringFloat(txtbasemenor.getText()));
+            txtarea.setText(resulatado.toString());
+        }
+    }//GEN-LAST:event_btngenerarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

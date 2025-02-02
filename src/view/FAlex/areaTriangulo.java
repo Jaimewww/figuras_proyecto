@@ -5,7 +5,10 @@
 package view.FAlex;
 
 import fonts.Fonts;
-
+import controller.F_Alex;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Bidi_P_T;
 /**
  *
  * @author JAIMEUNL
@@ -85,6 +88,11 @@ public class areaTriangulo extends javax.swing.JPanel {
         btngenerar.setBackground(new java.awt.Color(102, 255, 255));
         btngenerar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btngenerar.setText("GENERAR");
+        btngenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngenerarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/TRIANGULO.png"))); // NOI18N
 
@@ -117,13 +125,13 @@ public class areaTriangulo extends javax.swing.JPanel {
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addGap(111, 111, 111)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btn_Regresar))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(btngenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4)
-                                .addGap(48, 48, 48)))))
+                                .addGap(148, 148, 148)
+                                .addComponent(jLabel4)))
+                        .addGap(48, 48, 48)))
                 .addContainerGap())
         );
         bgLayout.setVerticalGroup(
@@ -160,11 +168,13 @@ public class areaTriangulo extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -178,7 +188,17 @@ public class areaTriangulo extends javax.swing.JPanel {
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
+        Menu_Bidi_P_T menu_Bidi_P_T = new Menu_Bidi_P_T();
+        Main_Frame.showPanel(bg, menu_Bidi_P_T);
     }//GEN-LAST:event_btn_RegresarActionPerformed
+
+    private void btngenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngenerarActionPerformed
+        // TODO add your handling code here:
+        if(Utiles.validate(txtbase.getText()) && Utiles.validate(txtaltura.getText())){
+            Float resulatado = F_Alex.triangulo(Utiles.transformStringFloat(txtaltura.getText()), Utiles.transformStringFloat(txtbase.getText()));
+            txtarea.setText(resulatado.toString());
+        }
+    }//GEN-LAST:event_btngenerarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -13,99 +13,99 @@ import utiles.Utiles;
 public class F_Alex {
 
     // Paralelogramo Alex_Sigcho 1
-    public Float paralelogramo(Float base, Float altura) {
+    public static float paralelogramo(float base, float altura) {
         Float area = base * altura;
         return Utiles.redondear(area);
     }
 
     // Pentágono Alex_Sigcho 2
-    public Float pentagono(Float lado, Float apotema) {
+    public static float pentagono(float lado, float apotema) {
         Float area = ((5 * lado) * apotema) / 2;
         return Utiles.redondear(area);
     }
 
     // Polígono regular Alex_Sigcho 3
-    public Float poligonoRegular(Float perimetro, Float apotema) {
+    public static float poligonoRegular(float perimetro, float apotema) {
         Float area = (perimetro * apotema) / 2;
         return Utiles.redondear(area);
     }
 
     // Rectángulo Alex_Sigcho 4
-    public Float rectangulo(Float largo, Float ancho) {
+    public static float rectangulo(float largo, float ancho) {
         Float area = largo * ancho;
         return Utiles.redondear(area);
     }
 
     // Rombo Alex_Sigcho5
-    public Float rombo(Float diagonalMayor, Float diagonalMenor) {
+    public static float rombo(float diagonalMayor, float diagonalMenor) {
         Float area = (diagonalMayor * diagonalMenor) / 2;
         return Utiles.redondear(area);
     }
 
     // Romboide Alex_Sigcho6
-    public Float romboide(Float base, Float altura) {
+    public static float romboide(float base, float altura) {
         Float area = base * altura;
         return Utiles.redondear(area);
     }
 
     // Sector circular Alex_Sigcho7
-    public Float sectorCircular(Float angulo, Float radio) {
+    public static float sectorCircular(float angulo, float radio) {
         Float area = (float) ((angulo / 360) * (Math.PI * (radio * radio)));
         return Utiles.redondear(area);
     }
 
     // Segmento circular Alex_Sigcho8
-    public Float segmentoCircular(Float angulo, Float radio) {
+    public static float segmentoCircular(float angulo, float radio) {
         Float anguloRad = (float) Math.toRadians(angulo);
         Float area = (float) (Math.pow(0.5, radio) * (anguloRad - Math.sin(anguloRad)));
         return Utiles.redondear(area);
     }
 
     // Segmento elíptico Alex_Sigcho9
-    public Float segmentoEliptico(Float semiejeMayor, Float angulo, Float semiejeMenor) {
+    public static float segmentoEliptico(float semiejeMayor, float angulo, float semiejeMenor) {
         Float anguloRad = (float) Math.toRadians(angulo);
         Float area = (float) ((0.5 * (semiejeMayor * semiejeMenor)) * (anguloRad - Math.sin(anguloRad)));
         return Utiles.redondear(area);
     }
 
     // Semicírculo Alex_Sigcho10
-    public Float semicirculo(Float radio) {
+    public static float semicirculo(float radio) {
         Float area = (float) (((Math.PI) * (Math.pow(radio, 2))) / 2);
         return Utiles.redondear(area);
     }
 
     // Trapecio circular Alex_Sigcho11
-    public Float trapecioCircular(Float radioExterior, Float radioInterior, Float radio) {
+    public static float trapecioCircular(float radioExterior, float radioInterior, float radio) {
         Float area = (float) ((0.5) * (radio) * ((Math.pow(radioExterior, 2)) - (Math.pow(radioInterior, 2))));
         return Utiles.redondear(area);
     }
 
     // Trapecio isósceles Alex_Sigcho12
-    public Float trapecioIsosceles(Float baseMayor, Float baseMenor, Float altura) {
+    public static float trapecioIsosceles(float baseMayor, float baseMenor, float altura) {
         Float area = ((baseMayor * baseMenor) / 2) * altura;
         return Utiles.redondear(area);
     }
 
     // Triángulo Alex_Sigcho13
-    public Float triangulo(Float base, Float altura) {
+    public static float triangulo(float base, float altura) {
         Float area = (base * altura) / 2;
         return Utiles.redondear(area);
     }
 
     // Triángulo equilátero Alex_Sigcho14
-    public Float trianguloEquilatero(Float lado) {
+    public static float trianguloEquilatero(float lado) {
         Float area = (float) ((Math.pow(lado, 2)) / 4);
         return Utiles.redondear(area);
     }
 
     // Triángulo escaleno Alex_Sigcho15
-    public Float trianguloEscaleno(Float base, Float altura) {
+    public static float trianguloEscaleno(float base, float altura) {
         Float area = (base * altura) / 2;
         return Utiles.redondear(area);
     }
 
     // Triqueta Alex_Sigcho16
-    public Float triqueta(Float largo, Float ancho) {
+    public static float triqueta(float largo, float ancho) {
         Float area = largo * ancho;
         return Utiles.redondear(area);
     }

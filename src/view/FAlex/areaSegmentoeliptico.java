@@ -5,7 +5,10 @@
 package view.FAlex;
 
 import fonts.Fonts;
-
+import controller.F_Alex;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Bidi_P_T;
 /**
  *
  * @author JAIMEUNL
@@ -90,6 +93,11 @@ public class areaSegmentoeliptico extends javax.swing.JPanel {
         btngenerar.setBackground(new java.awt.Color(255, 255, 153));
         btngenerar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btngenerar.setText("GENERAR");
+        btngenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngenerarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SEGMENTOELIPTICO.png"))); // NOI18N
 
@@ -203,11 +211,21 @@ public class areaSegmentoeliptico extends javax.swing.JPanel {
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
+        Menu_Bidi_P_T menu_Bidi_P_T = new Menu_Bidi_P_T();
+        Main_Frame.showPanel(bg, menu_Bidi_P_T);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
     private void txtanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtanguloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtanguloActionPerformed
+
+    private void btngenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngenerarActionPerformed
+        // TODO add your handling code here:
+        if(Utiles.validate(txtangulo.getText()) && Utiles.validate(txtsemiejemenor.getText()) && Utiles.validate(txtsemiejemayor.getText())){
+            Float resulatado = F_Alex.segmentoEliptico(Utiles.transformStringFloat(txtangulo.getText()), Utiles.transformStringFloat(txtsemiejemayor.getText()),Utiles.transformStringFloat(txtsemiejemenor.getText()));
+            txtarea.setText(resulatado.toString());
+        }
+    }//GEN-LAST:event_btngenerarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
