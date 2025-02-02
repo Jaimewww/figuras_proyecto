@@ -235,4 +235,5 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel main_MenuPanel;
     // End of variables declaration//GEN-END:variables
+
 }
