@@ -14,12 +14,12 @@ import view.Menu_Tridi_O_T;
  *
  * @author JAIMEUNL
  */
-public class piramidePentagonal extends javax.swing.JPanel {
+public class toroide extends javax.swing.JPanel {
 
     /**
      * Creates new form Menu_Figuras
      */
-    public piramidePentagonal() {
+    public toroide() {
         initComponents();
         btn_Regresar.setVisible(true);
     }
@@ -38,12 +38,12 @@ public class piramidePentagonal extends javax.swing.JPanel {
         btn_Regresar = new javax.swing.JButton();
         bg = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        txtlado = new java.awt.TextField();
+        txt_mayor = new java.awt.TextField();
         jLabel1 = new javax.swing.JLabel();
         btnVolumenOctaedro = new javax.swing.JButton();
         btn_Regresar1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        txtaltura = new java.awt.TextField();
+        txt_menor = new java.awt.TextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         txt_Result = new javax.swing.JLabel();
@@ -63,18 +63,18 @@ public class piramidePentagonal extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("PIRAMIDE PENTAGONAL");
+        jLabel3.setText("AREA TOROIDE");
 
-        txtlado.setBackground(new java.awt.Color(255, 153, 102));
-        txtlado.addActionListener(new java.awt.event.ActionListener() {
+        txt_mayor.setBackground(new java.awt.Color(255, 153, 102));
+        txt_mayor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtladoActionPerformed(evt);
+                txt_mayorActionPerformed(evt);
             }
         });
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("LONGITUD DE UN LADO:");
+        jLabel1.setText("RADIO MAYOR:");
 
         btnVolumenOctaedro.setBackground(new java.awt.Color(0, 102, 255));
         btnVolumenOctaedro.setText("GENERAR");
@@ -95,16 +95,16 @@ public class piramidePentagonal extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("LONGITUD DE LA  ALTURA:");
+        jLabel2.setText("RADIO MENOR:");
 
-        txtaltura.setBackground(new java.awt.Color(255, 153, 102));
-        txtaltura.addActionListener(new java.awt.event.ActionListener() {
+        txt_menor.setBackground(new java.awt.Color(255, 153, 102));
+        txt_menor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtalturaActionPerformed(evt);
+                txt_menorActionPerformed(evt);
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ra.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/toroide.png"))); // NOI18N
 
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("TOTAL:");
@@ -115,36 +115,40 @@ public class piramidePentagonal extends javax.swing.JPanel {
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(txtlado, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(txtaltura, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(35, 35, 35))
             .addGroup(bgLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(jLabel14)
                 .addGap(18, 18, 18)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(134, 134, 134))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(128, 128, 128)
-                        .addComponent(btnVolumenOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 85, Short.MAX_VALUE))
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(134, 134, 134))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_Regresar1)
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_Regresar1))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(txt_mayor, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(48, 48, 48)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(txt_menor, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnVolumenOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(49, 49, 49)))
+                        .addComponent(jLabel4)))
+                .addGap(35, 35, 35))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,14 +169,13 @@ public class piramidePentagonal extends javax.swing.JPanel {
                             .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtlado, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtaltura, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_mayor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_menor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel14)
-                                .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnVolumenOctaedro, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel14)
+                            .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnVolumenOctaedro))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -180,36 +183,38 @@ public class piramidePentagonal extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtladoActionPerformed
+    private void txt_mayorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_mayorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtladoActionPerformed
+    }//GEN-LAST:event_txt_mayorActionPerformed
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
     private void btn_Regresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Regresar1ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your txt_mayorg code here:
         Menu_Tridi_O_T  menu_Tridi_O_T = new Menu_Tridi_O_T ();
         Main_Frame.showPanel(this, menu_Tridi_O_T);
     }//GEN-LAST:event_btn_Regresar1ActionPerformed
 
-    private void txtalturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtalturaActionPerformed
+    private void txt_menorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_menorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtalturaActionPerformed
+    }//GEN-LAST:event_txt_menorActionPerformed
 
     private void btnVolumenOctaedroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolumenOctaedroActionPerformed
         // TODO add your handling code here:
-        if(Utiles.validate(txtlado.getText()) && Utiles.validate(txtaltura.getText())){
-            Float resultado = F_Soledad.ejecutarPiramidePentagonal (Utiles.transformStringFloat(txtlado.getText()),Utiles.transformStringFloat(txtaltura.getText()));
+        if(Utiles.validate(txt_mayor.getText()) && Utiles.validate(txt_menor.getText())){
+            Float resultado = F_Soledad.ejecutarToroide(Utiles.transformStringFloat(txt_mayor.getText()),Utiles.transformStringFloat(txt_menor.getText()));
             txt_Result.setText(resultado.toString());
         }
     }//GEN-LAST:event_btnVolumenOctaedroActionPerformed
@@ -226,7 +231,7 @@ public class piramidePentagonal extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel txt_Result;
-    private java.awt.TextField txtaltura;
-    private java.awt.TextField txtlado;
+    private java.awt.TextField txt_mayor;
+    private java.awt.TextField txt_menor;
     // End of variables declaration//GEN-END:variables
 }

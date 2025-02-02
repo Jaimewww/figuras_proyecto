@@ -124,4 +124,9 @@ public class F_Soledad {
     public static float ejecutarTetraedroVolumen(float a) { // a = arista 
         return Utiles.redondear((float) ((Math.pow(a, 3) * (Math.sqrt(2))) / 12)); //19
     }
+    
+    public static float ejecutarToroide(float R, float r){// R = radio mayor -- r = radio menor
+        return Utiles.redondear((float)(4 * Math.pow(Math.PI, 2) * R * r));
+    }
+    
 }

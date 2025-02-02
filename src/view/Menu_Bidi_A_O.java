@@ -6,21 +6,7 @@ package view;
 
 import fonts.Fonts;
 import javax.swing.JPanel;
-import view.FAlex.areaParalelogramo;
-import view.FAlex.areaPentagono;
-import view.FAlex.areaRombo;
-import view.FAlex.areaRomboide;
-import view.FAlex.areaSectorcircular;
-import view.FAlex.areaSegmentocircular;
-import view.FAlex.areaSegmentoeliptico;
-import view.FAlex.areaSemicirculo;
-import view.FAlex.areaTrapeciocircular;
-import view.FAlex.areaTrapecioisoceles;
-import view.FAlex.areaTriangulo;
-import view.FAlex.areaTrianguloequilatero;
-import view.FAlex.areaTrianguloescaleno;
-import view.FAlex.areaTriqueta;
-
+import view.FEmilio.*;
 /**
  *
  * @author JAIMEUNL
@@ -47,23 +33,14 @@ public class Menu_Bidi_A_O extends javax.swing.JPanel {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        btnabrircalc = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
         cbxfigurasA = new javax.swing.JComboBox<>();
+        btnabrircal = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
-        bg.setPreferredSize(new java.awt.Dimension(610, 240));
-
-        btnabrircalc.setText("Abrir Calculadora");
-        btnabrircalc.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));
-        btnabrircalc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnabrircalcActionPerformed(evt);
-            }
-        });
 
         jLabel3.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 20));
         jLabel3.setText("Figuras Bidimensionales");
@@ -84,38 +61,45 @@ public class Menu_Bidi_A_O extends javax.swing.JPanel {
             }
         });
 
+        btnabrircal.setText("Abrir Calculadora");
+        btnabrircal.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));
+        btnabrircal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnabrircalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(cbxfigurasA, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(btnabrircalc, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(74, Short.MAX_VALUE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addComponent(cbxfigurasA, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnabrircal, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addComponent(btn_Regresar)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(168, 168, 168))))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(155, 155, 155))))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+            .addGroup(bgLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btn_Regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnabrircalc, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbxfigurasA, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69))
+                    .addComponent(cbxfigurasA, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnabrircal, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(75, 75, 75))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -130,67 +114,87 @@ public class Menu_Bidi_A_O extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnabrircalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnabrircalcActionPerformed
+    private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
-        seleccion(cbxfigurasA.getSelectedItem().toString());
-    }//GEN-LAST:event_btnabrircalcActionPerformed
+        Menu_Bidimensionales menu_Bidimensionales = new Menu_Bidimensionales();
+        Main_Frame.showPanel(this, menu_Bidimensionales);
+    }//GEN-LAST:event_btn_RegresarActionPerformed
+
+    private void btnabrircalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnabrircalActionPerformed
+        // TODO add your handling code here:
+         String figura = cbxfigurasA.getSelectedItem().toString();
+        seleccion(figura);
+    }//GEN-LAST:event_btnabrircalActionPerformed
 public void regresar(JPanel panel){
         Main_Frame.showPanel(this, panel);
     }
     
-    public void seleccion(String figura){
-        switch (figura){
-            case "Paralelogramo":
-                areaParalelogramo paralelogramo = new areaParalelogramo();
-                Main_Frame.showPanel(bg, paralelogramo);
-            case "Pentagono":
-                areaPentagono pentagono = new areaPentagono();
-                Main_Frame.showPanel(bg, pentagono);
-            case "Rombo":
-                areaRombo rombo = new areaRombo();
-                Main_Frame.showPanel(bg, rombo);
-            case "Romboide":
-                areaRomboide romboide= new areaRomboide();
-                Main_Frame.showPanel(bg, romboide);
-            case "Sector circular":
-                areaSectorcircular sectorcircular = new areaSectorcircular();
-                Main_Frame.showPanel(bg, sectorcircular);
-            case "Segmento circular":
-                areaSegmentocircular segmentociecular = new areaSegmentocircular();
-                Main_Frame.showPanel(bg, segmentociecular);
-            case "Segmento elíptico":
-                areaSegmentoeliptico segmentoeliptico = new areaSegmentoeliptico();
-                Main_Frame.showPanel(bg, segmentoeliptico);
-            case "Semicírculo":
-                areaSemicirculo semicirculo = new areaSemicirculo();
-                Main_Frame.showPanel(bg, semicirculo);
-            case "Trapecio circular":
-                areaTrapeciocircular trapeciocircular = new areaTrapeciocircular();
-                Main_Frame.showPanel(bg, trapeciocircular);
-            case "Trapecio isósceles":
-                areaTrapecioisoceles trapeciosisoceles = new areaTrapecioisoceles();
-                Main_Frame.showPanel(bg, trapeciosisoceles);
-            case "Triángulo":
-                areaTriangulo triangulo = new areaTriangulo();
-                Main_Frame.showPanel(bg, triangulo);
-            case "Triángulo equilátero":
-                areaTrianguloequilatero trianguloequilatero = new areaTrianguloequilatero();
-                Main_Frame.showPanel(bg, trianguloequilatero);
-            case "Triángulo escaleno":
-                areaTrianguloescaleno trianguloescaleno = new areaTrianguloescaleno();
-                Main_Frame.showPanel(bg, trianguloescaleno);
-            case "Triqueta":
-                areaTriqueta triqueta = new areaTriqueta();
-                Main_Frame.showPanel(bg, triqueta);
+    public void seleccion(String figura) {
+        switch (figura) {
+            case "Arco circular":
+                area_Arco_circular AC = new area_Arco_circular();
+                Main_Frame.showPanel(this, AC);
+                break;
+            case "Círculo":
+                area_Circulo C = new area_Circulo();
+                Main_Frame.showPanel(this, C);
+                break;
+            case "Círculo concéntrico":
+                area_Circulo_Concentrico CC = new area_Circulo_Concentrico();
+                Main_Frame.showPanel(this, CC);
+                break;
+            case "Corona circular":
+                area_Corona_circular CCir = new area_Corona_circular();
+                Main_Frame.showPanel(this, CCir);
+                break;
+            case "Corazón":
+                area_Corazon Co = new area_Corazon();
+                Main_Frame.showPanel(this, Co);
+                break;
+            case "Dodecágono":
+                area_Dodecagono D = new area_Dodecagono();
+                Main_Frame.showPanel(this, D);
+                break;
+            case "Elipse":
+                area_Elipse E = new area_Elipse();
+                Main_Frame.showPanel(this, E);
+                break;
+            case "Eneágono":
+                area_Eneágono En = new area_Eneágono();
+                Main_Frame.showPanel(this, En);
+                break;
+            case "Estrella de 5 puntas":
+                area_Estrella_5_Puntas E5 = new area_Estrella_5_Puntas();
+                Main_Frame.showPanel(this, E5);
+                break;
+            case "Estrella de 6 puntas":
+                area_Estrella_6_Puntas E6 = new area_Estrella_6_Puntas();
+                Main_Frame.showPanel(this, E6);
+                break;
+            case "Heptágono":
+                area_heptagono H = new area_heptagono();
+                Main_Frame.showPanel(this, H);
+                break;
+            case "Hexágono":
+                area_Hexagono Hex = new area_Hexagono();
+                Main_Frame.showPanel(this, Hex);
+                break;
+            case "Octágono":
+                area_Octagono O = new area_Octagono();
+                Main_Frame.showPanel(this, O);
+                break;
+            case "Octágono regular con apotema":
+                area_Octagono_regular_AP ORAp = new area_Octagono_regular_AP();
+                Main_Frame.showPanel(this, ORAp);
+                break;
+            case "Decágono":
+                area_Decagono De = new area_Decagono();
+                Main_Frame.showPanel(this, De);
+                break;
         }
-                
     }
-    private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
-        // TODO add your handling code here:
-        Menu_Bidimensionales menu_Bidimensionales = new Menu_Bidimensionales();
-        Main_Frame.showPanel(bg, menu_Bidimensionales);
-    }//GEN-LAST:event_btn_RegresarActionPerformed
-
+    
+    
     private void cbxfigurasAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxfigurasAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxfigurasAActionPerformed
@@ -199,7 +203,7 @@ public void regresar(JPanel panel){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JButton btn_Regresar;
-    private javax.swing.JButton btnabrircalc;
+    private javax.swing.JButton btnabrircal;
     private javax.swing.JComboBox<String> cbxfigurasA;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables

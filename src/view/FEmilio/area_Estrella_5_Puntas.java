@@ -4,7 +4,11 @@
  */
 package view.FEmilio;
 
+import controller.F_Emilio;
 import fonts.Fonts;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Bidi_A_O;
 
 /**
  *
@@ -19,9 +23,9 @@ public class area_Estrella_5_Puntas extends javax.swing.JPanel {
         initComponents();
         btn_Regresar.setVisible(true);
     }
-    
+
     Fonts tipoFuente = new Fonts();
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,9 +39,11 @@ public class area_Estrella_5_Puntas extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnArea_arco_circular = new javax.swing.JButton();
+        btn_esttlla_5 = new javax.swing.JButton();
         txt_r_5puntas = new java.awt.TextField();
         jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txt_total = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
@@ -61,11 +67,11 @@ public class area_Estrella_5_Puntas extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("INGRESE LA LONGITUD DEL RADIO INSCRITO EN LA ESTRELLA:");
 
-        btnArea_arco_circular.setBackground(new java.awt.Color(0, 102, 255));
-        btnArea_arco_circular.setText("GENERAR");
-        btnArea_arco_circular.addActionListener(new java.awt.event.ActionListener() {
+        btn_esttlla_5.setBackground(new java.awt.Color(0, 102, 255));
+        btn_esttlla_5.setText("GENERAR");
+        btn_esttlla_5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnArea_arco_circularActionPerformed(evt);
+                btn_esttlla_5ActionPerformed(evt);
             }
         });
 
@@ -78,6 +84,14 @@ public class area_Estrella_5_Puntas extends javax.swing.JPanel {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/estrlla_5.jpg"))); // NOI18N
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("TOTAL:");
+
+        txt_total.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        txt_total.setForeground(new java.awt.Color(0, 0, 0));
+        txt_total.setText("...");
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -87,21 +101,24 @@ public class area_Estrella_5_Puntas extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnArea_arco_circular, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(74, 74, 74))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_total)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_esttlla_5, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(123, 123, 123))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addGroup(bgLayout.createSequentialGroup()
                                         .addGap(36, 36, 36)
                                         .addComponent(txt_r_5puntas, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)))
                         .addComponent(jLabel4))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_Regresar)))
                 .addGap(29, 29, 29))
         );
@@ -110,19 +127,23 @@ public class area_Estrella_5_Puntas extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnArea_arco_circular)
+                    .addComponent(btn_esttlla_5)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(btn_Regresar))
                         .addGap(29, 29, 29)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_r_5puntas, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txt_r_5puntas, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(txt_total)))
                             .addComponent(jLabel4))))
-                .addGap(378, 378, 378))
+                .addGap(336, 336, 336))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -133,21 +154,25 @@ public class area_Estrella_5_Puntas extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 240, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
+        Menu_Bidi_A_O menu_back = new Menu_Bidi_A_O();
+        Main_Frame.showPanel(this, menu_back);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
-    private void btnArea_arco_circularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArea_arco_circularActionPerformed
+    private void btn_esttlla_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_esttlla_5ActionPerformed
         // TODO add your handling code here:
-        
-        
-        
-        
-    }//GEN-LAST:event_btnArea_arco_circularActionPerformed
+        if (Utiles.validate(txt_r_5puntas.getText())) {
+            Float r = Utiles.transformStringFloat(txt_r_5puntas.getText());
+            Float resultado = F_Emilio.Ejecutar_Estrella5(r);
+            txt_total.setText(resultado.toString());
+        }
+
+    }//GEN-LAST:event_btn_esttlla_5ActionPerformed
 
     private void txt_r_5puntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_r_5puntasActionPerformed
         // TODO add your handling code here:
@@ -156,11 +181,13 @@ public class area_Estrella_5_Puntas extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    private javax.swing.JButton btnArea_arco_circular;
     private javax.swing.JButton btn_Regresar;
+    private javax.swing.JButton btn_esttlla_5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private java.awt.TextField txt_r_5puntas;
+    private javax.swing.JLabel txt_total;
     // End of variables declaration//GEN-END:variables
 }

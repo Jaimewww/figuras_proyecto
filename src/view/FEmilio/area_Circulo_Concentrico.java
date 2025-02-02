@@ -4,7 +4,11 @@
  */
 package view.FEmilio;
 
+import controller.F_Emilio;
 import fonts.Fonts;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Bidi_A_O;
 
 /**
  *
@@ -19,9 +23,9 @@ public class area_Circulo_Concentrico extends javax.swing.JPanel {
         initComponents();
         btn_Regresar.setVisible(true);
     }
-    
+
     Fonts tipoFuente = new Fonts();
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,11 +39,13 @@ public class area_Circulo_Concentrico extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnArea_arco_circular = new javax.swing.JButton();
-        txtA_circulo_cencentrico = new java.awt.TextField();
-        txtA_circulo_cencentrico1 = new java.awt.TextField();
+        btnArea_circulo_concentrico = new javax.swing.JButton();
+        txtA_r = new java.awt.TextField();
+        txtA_R = new java.awt.TextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txt_total = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
@@ -62,25 +68,25 @@ public class area_Circulo_Concentrico extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("INGRESE EL VALOR DEL RADIO INTERIOR DEL CIRCULO:");
 
-        btnArea_arco_circular.setBackground(new java.awt.Color(0, 102, 255));
-        btnArea_arco_circular.setText("GENERAR");
-        btnArea_arco_circular.addActionListener(new java.awt.event.ActionListener() {
+        btnArea_circulo_concentrico.setBackground(new java.awt.Color(0, 102, 255));
+        btnArea_circulo_concentrico.setText("GENERAR");
+        btnArea_circulo_concentrico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnArea_arco_circularActionPerformed(evt);
+                btnArea_circulo_concentricoActionPerformed(evt);
             }
         });
 
-        txtA_circulo_cencentrico.setBackground(new java.awt.Color(153, 153, 255));
-        txtA_circulo_cencentrico.addActionListener(new java.awt.event.ActionListener() {
+        txtA_r.setBackground(new java.awt.Color(153, 153, 255));
+        txtA_r.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtA_circulo_cencentricoActionPerformed(evt);
+                txtA_rActionPerformed(evt);
             }
         });
 
-        txtA_circulo_cencentrico1.setBackground(new java.awt.Color(153, 153, 255));
-        txtA_circulo_cencentrico1.addActionListener(new java.awt.event.ActionListener() {
+        txtA_R.setBackground(new java.awt.Color(153, 153, 255));
+        txtA_R.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtA_circulo_cencentrico1ActionPerformed(evt);
+                txtA_RActionPerformed(evt);
             }
         });
 
@@ -90,101 +96,137 @@ public class area_Circulo_Concentrico extends javax.swing.JPanel {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Circulo Concentrico.png"))); // NOI18N
 
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("TOTAL:");
+
+        txt_total.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        txt_total.setForeground(new java.awt.Color(0, 0, 0));
+        txt_total.setText("...");
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(164, 164, 164)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-                .addComponent(btn_Regresar)
-                .addContainerGap())
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(btnArea_arco_circular, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(96, 96, 96)
-                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtA_circulo_cencentrico, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtA_circulo_cencentrico1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addGap(39, 39, 39))))
+                                .addGap(82, 82, 82)
+                                .addComponent(txtA_r, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel2))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel1))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(78, 78, 78)
+                                .addComponent(txtA_R, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_total)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(btnArea_circulo_concentrico, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(237, 237, 237))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_Regresar)
+                            .addComponent(jLabel5))
+                        .addGap(96, 96, 96))))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(btn_Regresar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtA_circulo_cencentrico, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtA_circulo_cencentrico1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnArea_arco_circular)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(jLabel3)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtA_r, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtA_R, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txt_total))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(btn_Regresar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnArea_circulo_concentrico)
+                .addGap(36, 36, 36))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 624, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
+        Menu_Bidi_A_O menu_back = new Menu_Bidi_A_O();
+        Main_Frame.showPanel(this, menu_back);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
-    private void btnArea_arco_circularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArea_arco_circularActionPerformed
+    private void btnArea_circulo_concentricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArea_circulo_concentricoActionPerformed
         // TODO add your handling code here:
-        
-        
-        
-        
-    }//GEN-LAST:event_btnArea_arco_circularActionPerformed
+        if (Utiles.validate(txtA_r.getText())&& Utiles.validate(txtA_R.getText())) {
+            Float r = Utiles.transformStringFloat(txtA_r.getText());
+            Float R = Utiles.transformStringFloat(txtA_R.getText());
+            Float resultado = F_Emilio.Ejecutar_Circulo_Concentrico(r, R);
+            txt_total.setText(resultado.toString());
+        }
 
-    private void txtA_circulo_cencentricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtA_circulo_cencentricoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtA_circulo_cencentricoActionPerformed
+    }//GEN-LAST:event_btnArea_circulo_concentricoActionPerformed
 
-    private void txtA_circulo_cencentrico1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtA_circulo_cencentrico1ActionPerformed
+    private void txtA_rActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtA_rActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtA_circulo_cencentrico1ActionPerformed
+    }//GEN-LAST:event_txtA_rActionPerformed
+
+    private void txtA_RActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtA_RActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtA_RActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    private javax.swing.JButton btnArea_arco_circular;
+    private javax.swing.JButton btnArea_circulo_concentrico;
     private javax.swing.JButton btn_Regresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private java.awt.TextField txtA_circulo_cencentrico;
-    private java.awt.TextField txtA_circulo_cencentrico1;
+    private java.awt.TextField txtA_R;
+    private java.awt.TextField txtA_r;
+    private javax.swing.JLabel txt_total;
     // End of variables declaration//GEN-END:variables
 }

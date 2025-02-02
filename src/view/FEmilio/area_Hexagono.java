@@ -4,7 +4,11 @@
  */
 package view.FEmilio;
 
+import controller.F_Emilio;
 import fonts.Fonts;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Bidi_A_O;
 
 /**
  *
@@ -19,9 +23,9 @@ public class area_Hexagono extends javax.swing.JPanel {
         initComponents();
         btn_Regresar.setVisible(true);
     }
-    
+
     Fonts tipoFuente = new Fonts();
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,9 +39,11 @@ public class area_Hexagono extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnArea_arco_circular = new javax.swing.JButton();
+        btn_hexagono = new javax.swing.JButton();
         txt_l_hexagono = new java.awt.TextField();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txt_total = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
@@ -59,13 +65,13 @@ public class area_Hexagono extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("INGRESE LA LONGITUD DE UN LADO DEL HEXAGONO:");
+        jLabel1.setText("TOTAL:");
 
-        btnArea_arco_circular.setBackground(new java.awt.Color(0, 102, 255));
-        btnArea_arco_circular.setText("GENERAR");
-        btnArea_arco_circular.addActionListener(new java.awt.event.ActionListener() {
+        btn_hexagono.setBackground(new java.awt.Color(0, 102, 255));
+        btn_hexagono.setText("GENERAR");
+        btn_hexagono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnArea_arco_circularActionPerformed(evt);
+                btn_hexagonoActionPerformed(evt);
             }
         });
 
@@ -78,6 +84,14 @@ public class area_Hexagono extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/hexagono.png"))); // NOI18N
 
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("INGRESE LA LONGITUD DE UN LADO DEL HEXAGONO:");
+
+        txt_total.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        txt_total.setForeground(new java.awt.Color(0, 0, 0));
+        txt_total.setText("...");
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -86,23 +100,29 @@ public class area_Hexagono extends javax.swing.JPanel {
                 .addGap(22, 22, 22)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+                            .addComponent(txt_l_hexagono, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(txt_l_hexagono, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(37, 97, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addGap(47, 47, 47))
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_total)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_Regresar)
-                        .addGap(66, 66, 66))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
+                        .addComponent(btn_Regresar)))
+                .addGap(47, 47, 47))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnArea_arco_circular, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_hexagono, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(172, 172, 172))
+            .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(bgLayout.createSequentialGroup()
+                    .addGap(32, 32, 32)
+                    .addComponent(jLabel4)
+                    .addContainerGap(259, Short.MAX_VALUE)))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,18 +130,25 @@ public class area_Hexagono extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(btn_Regresar))
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_l_hexagono, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(67, 67, 67)
+                        .addComponent(txt_l_hexagono, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(txt_total)))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jLabel2)))
                 .addGap(11, 11, 11)
-                .addComponent(btnArea_arco_circular)
+                .addComponent(btn_hexagono)
                 .addContainerGap(21, Short.MAX_VALUE))
+            .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(bgLayout.createSequentialGroup()
+                    .addGap(83, 83, 83)
+                    .addComponent(jLabel4)
+                    .addContainerGap(141, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -138,15 +165,19 @@ public class area_Hexagono extends javax.swing.JPanel {
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
+        Menu_Bidi_A_O menu_back = new Menu_Bidi_A_O();
+        Main_Frame.showPanel(this, menu_back);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
-    private void btnArea_arco_circularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArea_arco_circularActionPerformed
+    private void btn_hexagonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hexagonoActionPerformed
         // TODO add your handling code here:
-        
-        
-        
-        
-    }//GEN-LAST:event_btnArea_arco_circularActionPerformed
+        if (Utiles.validate(txt_l_hexagono.getText())) {
+            Float l = Utiles.transformStringFloat(txt_l_hexagono.getText());
+            Float resultado = F_Emilio.Ejecutar_Hexagono(l);
+            txt_total.setText(resultado.toString());
+        }
+
+    }//GEN-LAST:event_btn_hexagonoActionPerformed
 
     private void txt_l_hexagonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_l_hexagonoActionPerformed
         // TODO add your handling code here:
@@ -155,11 +186,13 @@ public class area_Hexagono extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    private javax.swing.JButton btnArea_arco_circular;
     private javax.swing.JButton btn_Regresar;
+    private javax.swing.JButton btn_hexagono;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private java.awt.TextField txt_l_hexagono;
+    private javax.swing.JLabel txt_total;
     // End of variables declaration//GEN-END:variables
 }

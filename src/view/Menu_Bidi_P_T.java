@@ -6,20 +6,6 @@ package view;
 
 import fonts.Fonts;
 import javax.swing.JPanel;
-import view.FAlex.areaParalelogramo;
-import view.FAlex.areaPentagono;
-import view.FAlex.areaRombo;
-import view.FAlex.areaRomboide;
-import view.FAlex.areaSectorcircular;
-import view.FAlex.areaSegmentocircular;
-import view.FAlex.areaSegmentoeliptico;
-import view.FAlex.areaSemicirculo;
-import view.FAlex.areaTrapeciocircular;
-import view.FAlex.areaTrapecioisoceles;
-import view.FAlex.areaTriangulo;
-import view.FAlex.areaTrianguloequilatero;
-import view.FAlex.areaTrianguloescaleno;
-import view.FAlex.areaTriqueta;
 import view.FAlex.*;
 /**
  *

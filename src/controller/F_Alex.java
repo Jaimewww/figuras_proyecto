@@ -10,7 +10,7 @@ public class F_Alex {
 
     // Paralelogramo Alex_Sigcho
     public static Float paralelogramo(Float base, Float altura) {
-
+        // Paralelogramo Alex_Sigcho 1
         Float area = base * altura;
         return Utiles.redondear(area);
     }
@@ -27,19 +27,19 @@ public class F_Alex {
     }
 
     // Rectángulo Alex_Sigcho
-    public static  Float rectangulo(Float largo, Float ancho) {
+    public static Float rectangulo(Float largo, Float ancho) {
         Float area = largo * ancho;
         return Utiles.redondear(area);
     }
 
     // Rombo Alex_Sigcho
-    public static  Float rombo(Float diagonalMayor, Float diagonalMenor) {
+    public static Float rombo(Float diagonalMayor, Float diagonalMenor) {
         Float area = (diagonalMayor * diagonalMenor) / 2;
         return Utiles.redondear(area);
     }
 
     // Romboide Alex_Sigcho
-    public static  Float romboide(Float base, Float altura) {
+    public static Float romboide(Float base, Float altura) {
         Float area = base * altura;
         return Utiles.redondear(area);
     }
@@ -49,15 +49,16 @@ public class F_Alex {
         Float area = (float) ((angulo / 360) * (Math.PI * (radio * radio)));
         return Utiles.redondear(area);
     }
-    
+
     // Segmento circular Alex_Sigcho
-    public static  Float segmentoCircular(Float angulo, Float radio) {
+    public static Float segmentoCircular(Float angulo, Float radio) {
         Float anguloRad = (float) Math.toRadians(angulo);
         Float area = (float) (Math.pow(0.5, radio) * (anguloRad - Math.sin(anguloRad)));
         return Utiles.redondear(area);
     }
+
     // Segmento elíptico Alex_Sigcho
-    public static  Float segmentoEliptico(Float semiejeMayor, Float angulo, Float semiejeMenor) {
+    public static Float segmentoEliptico(Float semiejeMayor, Float angulo, Float semiejeMenor) {
         Float anguloRad = (float) Math.toRadians(angulo);
         Float area = (float) ((0.5 * (semiejeMayor * semiejeMenor)) * (anguloRad - Math.sin(anguloRad)));
         return Utiles.redondear(area);
@@ -103,21 +104,32 @@ public class F_Alex {
     public static Float triqueta(Float largo, Float ancho) {
         Float area = largo * ancho;
         return Utiles.redondear(area);
-   }
-    
+    }
+
     // Alex Sigcho - corazon - área - 16
-    public static Float corazon(float t) {
+    public static Float corazon(float escala) {
         int n = 10000;
         Float area = 0.0f;
         Float deltaT = 2 * (float) Math.PI / n;
 
         for (int i = 0; i < n; i++) {
-            t = i * deltaT;
+            float t = i * deltaT;
+
             Float x = 16 * (float) Math.pow(Math.sin(t), 3);
-            Float y = 13 * (float) Math.cos(t) - 5 * (float) Math.cos(2 * t) - 2 * (float) Math.cos(3 * t) - (float) Math.cos(4 * t);
-            area += x * y * deltaT;
+            Float y = 13 * (float) Math.cos(t) - 5 * (float) Math.cos(2 * t)
+                    - 2 * (float) Math.cos(3 * t) - (float) Math.cos(4 * t);
+
+            float tNext = (i + 1) * deltaT;
+            Float xNext = 16 * (float) Math.pow(Math.sin(tNext), 3);
+            Float yNext = 13 * (float) Math.cos(tNext) - 5 * (float) Math.cos(2 * tNext)
+                    - 2 * (float) Math.cos(3 * tNext) - (float) Math.cos(4 * tNext);
+            area += (x * (yNext - y) - y * (xNext - x));
         }
-        area = Math.abs(area);
-        return Utiles.redondear(area);
+
+        area = Math.abs(area * 0.5f);
+        area *= escala;          
+
+        return Utiles.redondear(area); 
     }
+
 }

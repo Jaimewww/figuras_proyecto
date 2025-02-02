@@ -6,25 +6,7 @@ package view;
 
 import fonts.Fonts;
 import javax.swing.JPanel;
-import view.FSoledad.Atetraedro;
-import view.FSoledad.Vtetraedro;
-import view.FSoledad.octaedro;
-import view.FSoledad.octaedroV;
-import view.FSoledad.ortoedro;
-import view.FSoledad.paralelepipedo;
-import view.FSoledad.piramideCuadrada;
-import view.FSoledad.piramideDodecagonal;
-import view.FSoledad.piramideHexagonal;
-import view.FSoledad.piramideOblicua;
-import view.FSoledad.piramidePentagonal;
-import view.FSoledad.piramideTriangular;
-import view.FSoledad.piramideTruncada;
-import view.FSoledad.prismaDodecagonal;
-import view.FSoledad.prismaHexagonal;
-import view.FSoledad.prismaPentagonal;
-import view.FSoledad.prismaRectangular;
-import view.FSoledad.prismaTriangular;
-import view.FSoledad.semiesfera;
+import view.FSoledad.*;
 import view.Main_Frame;
 
 /**

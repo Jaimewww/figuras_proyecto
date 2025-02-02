@@ -3,16 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
-import controller.F_Soledad;
-import javax.swing.UIManager;
-import fonts.Fonts;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import utiles.MusicLoader;
-import utiles.Utiles;
-import javax.swing.*;
+import fonts.Fonts;
 /**
  *
  * @author JAIMEUNL

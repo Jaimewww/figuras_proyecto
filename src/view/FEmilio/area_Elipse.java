@@ -4,7 +4,11 @@
  */
 package view.FEmilio;
 
+import controller.F_Emilio;
 import fonts.Fonts;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Bidi_A_O;
 
 /**
  *
@@ -19,9 +23,9 @@ public class area_Elipse extends javax.swing.JPanel {
         initComponents();
         btn_Regresar.setVisible(true);
     }
-    
+
     Fonts tipoFuente = new Fonts();
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,11 +39,13 @@ public class area_Elipse extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnArea_arco_circular = new javax.swing.JButton();
+        btn_elipse = new javax.swing.JButton();
         txt_sme_dodecagono = new java.awt.TextField();
         jLabel2 = new javax.swing.JLabel();
         txt_sma_dodecagono = new java.awt.TextField();
         jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txt_total = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
@@ -48,7 +54,7 @@ public class area_Elipse extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Area Elipse");
+        jLabel3.setText("Area elipse");
 
         btn_Regresar.setText("Regresar");
         btn_Regresar.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 15));
@@ -63,11 +69,11 @@ public class area_Elipse extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("INGRESE EL SEMIEJE MENOR:");
 
-        btnArea_arco_circular.setBackground(new java.awt.Color(0, 102, 255));
-        btnArea_arco_circular.setText("GENERAR");
-        btnArea_arco_circular.addActionListener(new java.awt.event.ActionListener() {
+        btn_elipse.setBackground(new java.awt.Color(0, 102, 255));
+        btn_elipse.setText("GENERAR");
+        btn_elipse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnArea_arco_circularActionPerformed(evt);
+                btn_elipseActionPerformed(evt);
             }
         });
 
@@ -91,6 +97,14 @@ public class area_Elipse extends javax.swing.JPanel {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/elipse.png"))); // NOI18N
 
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("TOTAL:");
+
+        txt_total.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        txt_total.setForeground(new java.awt.Color(0, 0, 0));
+        txt_total.setText("...");
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -99,26 +113,30 @@ public class area_Elipse extends javax.swing.JPanel {
                 .addGap(16, 16, 16)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
-                        .addComponent(btn_Regresar)
-                        .addGap(29, 29, 29))
-                    .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(txt_sme_dodecagono, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txt_sme_dodecagono, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(bgLayout.createSequentialGroup()
+                                        .addComponent(txt_sma_dodecagono, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(140, 140, 140)
+                                        .addComponent(btn_elipse, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5)
                         .addGap(64, 64, 64))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(txt_sma_dodecagono, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(115, 115, 115)
-                        .addComponent(btnArea_arco_circular, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_total)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_Regresar)
+                        .addGap(41, 41, 41))))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,31 +145,35 @@ public class area_Elipse extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(btn_Regresar))
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txt_sme_dodecagono, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2))
-                            .addComponent(jLabel5))
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_sma_dodecagono, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_sma_dodecagono, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(146, 146, 146))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bgLayout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(btnArea_arco_circular)
-                        .addContainerGap())))
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(txt_total))
+                        .addGap(133, 133, 133))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_elipse)
+                        .addGap(137, 137, 137))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,15 +183,19 @@ public class area_Elipse extends javax.swing.JPanel {
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
+        Menu_Bidi_A_O menu_back = new Menu_Bidi_A_O();
+        Main_Frame.showPanel(this, menu_back);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
-    private void btnArea_arco_circularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArea_arco_circularActionPerformed
+    private void btn_elipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_elipseActionPerformed
         // TODO add your handling code here:
-        
-        
-        
-        
-    }//GEN-LAST:event_btnArea_arco_circularActionPerformed
+        if (Utiles.validate(txt_sme_dodecagono.getText()) && Utiles.validate(txt_sma_dodecagono.getText())) {
+            Float sme = Utiles.transformStringFloat(txt_sme_dodecagono.getText());
+            Float sma = Utiles.transformStringFloat(txt_sma_dodecagono.getText());
+            Float resultado = F_Emilio.Ejecutar_elipse(sme, sma);
+            txt_total.setText(resultado.toString());
+        }
+    }//GEN-LAST:event_btn_elipseActionPerformed
 
     private void txt_sme_dodecagonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_sme_dodecagonoActionPerformed
         // TODO add your handling code here:
@@ -182,13 +208,15 @@ public class area_Elipse extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    private javax.swing.JButton btnArea_arco_circular;
     private javax.swing.JButton btn_Regresar;
+    private javax.swing.JButton btn_elipse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private java.awt.TextField txt_sma_dodecagono;
     private java.awt.TextField txt_sme_dodecagono;
+    private javax.swing.JLabel txt_total;
     // End of variables declaration//GEN-END:variables
 }

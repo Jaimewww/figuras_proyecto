@@ -4,7 +4,11 @@
  */
 package view.FEmilio;
 
+import controller.F_Alex;
 import fonts.Fonts;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Bidi_A_O;
 
 /**
  *
@@ -19,9 +23,9 @@ public class area_Corazon extends javax.swing.JPanel {
         initComponents();
         btn_Regresar.setVisible(true);
     }
-    
+
     Fonts tipoFuente = new Fonts();
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,9 +39,11 @@ public class area_Corazon extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnArea_arco_circular = new javax.swing.JButton();
-        txt_t_corazon = new java.awt.TextField();
+        btn_corazon = new javax.swing.JButton();
+        txt_escala_corazon = new java.awt.TextField();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txt_total = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
@@ -59,50 +65,62 @@ public class area_Corazon extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("INGRESE EL VALOR DE GRADOS DE \"t\" :");
+        jLabel1.setText("INGRESE EL VALOR DE LA ESCALA:");
 
-        btnArea_arco_circular.setBackground(new java.awt.Color(0, 102, 255));
-        btnArea_arco_circular.setText("GENERAR");
-        btnArea_arco_circular.addActionListener(new java.awt.event.ActionListener() {
+        btn_corazon.setBackground(new java.awt.Color(0, 102, 255));
+        btn_corazon.setText("GENERAR");
+        btn_corazon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnArea_arco_circularActionPerformed(evt);
+                btn_corazonActionPerformed(evt);
             }
         });
 
-        txt_t_corazon.setBackground(new java.awt.Color(153, 153, 255));
-        txt_t_corazon.addActionListener(new java.awt.event.ActionListener() {
+        txt_escala_corazon.setBackground(new java.awt.Color(153, 153, 255));
+        txt_escala_corazon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_t_corazonActionPerformed(evt);
+                txt_escala_corazonActionPerformed(evt);
             }
         });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/corazon.png"))); // NOI18N
 
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("TOTAL:");
+
+        txt_total.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        txt_total.setForeground(new java.awt.Color(0, 0, 0));
+        txt_total.setText("...");
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
-                .addComponent(btn_Regresar)
-                .addGap(22, 22, 22))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnArea_arco_circular, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(234, 234, 234))
             .addGroup(bgLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(txt_t_corazon, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txt_escala_corazon, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_total))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(69, 69, 69))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                                .addComponent(btn_corazon, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(234, 234, 234))))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(69, 69, 69))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                        .addComponent(btn_Regresar)
+                        .addGap(34, 34, 34))))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,7 +132,7 @@ public class area_Corazon extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(143, 143, 143)
-                        .addComponent(btnArea_arco_circular))
+                        .addComponent(btn_corazon))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(jLabel2)))
@@ -123,7 +141,11 @@ public class area_Corazon extends javax.swing.JPanel {
                 .addGap(71, 71, 71)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_t_corazon, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_escala_corazon, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txt_total))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -141,28 +163,34 @@ public class area_Corazon extends javax.swing.JPanel {
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
+        Menu_Bidi_A_O menu_back = new Menu_Bidi_A_O();
+        Main_Frame.showPanel(this, menu_back);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
-    private void btnArea_arco_circularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArea_arco_circularActionPerformed
+    private void btn_corazonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_corazonActionPerformed
         // TODO add your handling code here:
-        
-        
-        
-        
-    }//GEN-LAST:event_btnArea_arco_circularActionPerformed
+        if (Utiles.validate(txt_escala_corazon.getText())) {
+            Float escala = Utiles.transformStringFloat(txt_escala_corazon.getText());
+            Float resultado = F_Alex.corazon(escala);
+            txt_total.setText(resultado.toString());
+        }
 
-    private void txt_t_corazonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_t_corazonActionPerformed
+    }//GEN-LAST:event_btn_corazonActionPerformed
+
+    private void txt_escala_corazonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_escala_corazonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_t_corazonActionPerformed
+    }//GEN-LAST:event_txt_escala_corazonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    private javax.swing.JButton btnArea_arco_circular;
     private javax.swing.JButton btn_Regresar;
+    private javax.swing.JButton btn_corazon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private java.awt.TextField txt_t_corazon;
+    private javax.swing.JLabel jLabel4;
+    private java.awt.TextField txt_escala_corazon;
+    private javax.swing.JLabel txt_total;
     // End of variables declaration//GEN-END:variables
 }

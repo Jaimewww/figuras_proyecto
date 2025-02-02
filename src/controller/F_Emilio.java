@@ -4,8 +4,6 @@
  */
 package controller;
 
-
-
 import utiles.Utiles;
 
 /**
@@ -87,6 +85,11 @@ public class F_Emilio {
         return Utiles.redondear(area);
     }
 
+    public static float Ejecutar_Corona_Circular(float radioMayor, float radioMenor) {
+        float area = (float) (Math.PI * (Math.pow(radioMayor, 2) - Math.pow(radioMenor, 2)));
+        return Utiles.redondear(area);
+    }
+
     public static float Ejecutar_decagono(float p, float a) {
         float area = (float) (p * a) / 2;
         return Utiles.redondear(area);
@@ -121,9 +124,9 @@ public class F_Emilio {
         return Utiles.redondear(area);
     }
 
-    public static float calcularAreaOctagono(float l, float ap) {
+    public static float Ejecutar_Octagono_Apotema(float l, float ap) {
         float perimetro = 8 * l;
         float area = (1 / 2.0f) * perimetro * ap;
-        return Utiles.redondear(area); 
+        return Utiles.redondear(area);
     }
 }
