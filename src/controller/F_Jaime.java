@@ -158,4 +158,12 @@ public class F_Jaime{
         //h : altura del cilindro
         return Utiles.redondear((float)((2 * Math.PI * a * b) + (2 * Math.PI * b * h)));
     }
+    
+    //Cilindro Hueco - Jaime
+    public static float ejecutarCilindroHueco(float R, float r, float h){
+        //R : Radio exterior
+        //r : Radio interior
+        //h : Altura
+        return 
+    }
 }
