@@ -42,7 +42,11 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
+<<<<<<< HEAD
                   <EmptySpace max="32767" attributes="0"/>
+=======
+                  <EmptySpace pref="190" max="32767" attributes="0"/>
+>>>>>>> 1acaf1bfef836fdd91fafc3f0613d96f0b5e9bb2
                   <Component id="jLabel3" min="-2" pref="284" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btn_Regresar" min="-2" max="-2" attributes="0"/>
