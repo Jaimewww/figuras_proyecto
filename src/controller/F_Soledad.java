@@ -20,16 +20,19 @@ public class F_Soledad {
     public static float ejecutarOrtoedro(float l, float w, float h) { // 3
         return (2 * l * w) + (2 * l * h) + (2 * w * h); // l = longitud  - w = ancho- h = altua
     }
-    
-    
-    
-    
+
     public static float ejecutarParalelepipedo(float a, float b, float c) { // a = lado - b = lado - c = lado
         return 2 * ((a * b) + (a * c) + (b * c));  
     }
+
     public static float ejecutarPiramideCuadrada(float a, float h) { // a = base - h = altura
         return (float) (Math.pow(a, 2) + (2 * a) * Math.sqrt((Math.pow(a, 2) / 4) + Math.pow(h, 2)));
     }
+    
+    
+    
+    
+    
     public static float areaBaseDodecagonal(float a) { // a longitud de un lado
         return (float) (3 * (2 + Math.sqrt(3)) * Math.pow(a, 2));
     }
@@ -41,6 +44,7 @@ public class F_Soledad {
     public static float ejecutarPiramideHexagonal(float l, float a_base, float a_lateral) { // l = lado de la base - a_base = area base - a_lateral
         return (3 * l) * (a_base + a_lateral);
     }
+
     public static float ejecutarPiramideOblicua(float l, float a) { // l = lado base - a = altura
         // Área de la base (cuadrada)
         float areaBase = l * l;
@@ -50,6 +54,7 @@ public class F_Soledad {
         // Área total
         return areaBase + areaLateral;
     }
+
     public static float ejecutarPiramidePentagonal(float l, float al) { // l = lado base - al = altura lateral 
         // perímetro de la base
         float perimetroBase = 5 * l;
@@ -85,7 +90,8 @@ public class F_Soledad {
         float areaBase = ejecutarBaseDodecagonal(l);
         return areaBase + ((12 * l) * a); 
     }
-    // area de la base
+  
+// area de la base
     public static float ejecutarBaseHexagonal(float l) { // l = lado
         return (float) ((3 * Math.sqrt(3) / 2) * Math.pow(l, 2));
     }
@@ -93,6 +99,7 @@ public class F_Soledad {
         float areaBase = ejecutarBaseHexagonal(l);
         return 2 * areaBase + ((6 * l) * a);
     }
+
     public static float ejecutarBasePentagonal(float l, float a) {// l = lado a = apotema
         return (5 / 2.0f) * a * l;
     }
@@ -100,9 +107,11 @@ public class F_Soledad {
         float areaBase = ejecutarBasePentagonal(l, a);
         return 2 * areaBase + ((5 * l) * al); 
     }
+ 
     public static float ejecutarPrismaRectangular(float l, float a, float h) { // l = longitud- a = ancho h =altura
         return 2 * (l* a + l * h + a * h);
     }
+
     // área de la base 
     public static float ejecutarBaseTriangular(float b, float a) { // b = base a = altura
         return 0.5f * b * a;
@@ -112,10 +121,13 @@ public class F_Soledad {
         float areaBase = ejecutarBaseTriangular(b, ag); 
         return 2 * areaBase + ((a + b + c) * at); // Área total
     }
+
+    
     public static float ejecutarSemiEsfera(float a) { // a = radio
         return (float) ((2) * (Math.PI) * (Math.pow(a, 2)));
 
     }
+    
     public static float ejecutarTetraedroArea(float a) { // a = arista 
         return (float) (Math.sqrt(3) * (Math.pow(a, 2)));
     }
