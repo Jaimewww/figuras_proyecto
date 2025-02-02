@@ -298,7 +298,7 @@ public class piramideTruncada extends javax.swing.JPanel {
     private void btn_Regresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Regresar1ActionPerformed
         // TODO add your handling code here:
         Menu_Tridi_O_T  menu_Tridi_O_T = new Menu_Tridi_O_T ();
-        Main_Frame.showPanel(bg, menu_Tridi_O_T);
+        Main_Frame.showPanel(this, menu_Tridi_O_T);
     }//GEN-LAST:event_btn_Regresar1ActionPerformed
 
     private void btnOrtoedro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrtoedro1ActionPerformed

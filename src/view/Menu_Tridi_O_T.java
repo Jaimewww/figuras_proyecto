@@ -152,11 +152,11 @@ public class Menu_Tridi_O_T extends javax.swing.JPanel {
     
     public void seleccion(String figura){
         switch (figura){
-            case "Area Octaedro":
+            case "Octaedro (Área)":
                 octaedro octaedro = new octaedro();
                 Main_Frame.showPanel(bg, octaedro);
                 break;
-            case "Volumen Octaedro":
+            case "Octaedro (Volumen)":
                 octaedroV octaedroV = new octaedroV();
                 Main_Frame.showPanel(bg, octaedroV);
                 break;

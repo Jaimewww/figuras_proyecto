@@ -95,7 +95,7 @@
                           <Component id="btn_Regresar1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="23" pref="24" max="32767" attributes="0"/>
+                  <EmptySpace min="23" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
