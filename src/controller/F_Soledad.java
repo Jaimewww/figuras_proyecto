@@ -1,15 +1,6 @@
-<<<<<<< HEAD
-//package controller;
-=======
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package controller;
->>>>>>> f0b68aec293aa66634749e76502749e33511a083
-
 
 package controller;
+
 
 /**
  *
