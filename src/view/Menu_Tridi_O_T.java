@@ -215,11 +215,11 @@ public class Menu_Tridi_O_T extends javax.swing.JPanel {
                 prismaTriangular prismaTriangular = new prismaTriangular();
                 Main_Frame.showPanel(bg,prismaTriangular);
                 break;
-            case "Area Tetraedro":
+            case "Tetraedro (Área)":
                 Atetraedro Atetraedro = new Atetraedro();
                 Main_Frame.showPanel(bg,Atetraedro);
                 break;
-            case "Volumen Tetraedro":
+            case "Tetraedro (Volumen)":
                 Vtetraedro Vtetraedro = new Vtetraedro();
                 Main_Frame.showPanel(bg,Vtetraedro);
                 break;

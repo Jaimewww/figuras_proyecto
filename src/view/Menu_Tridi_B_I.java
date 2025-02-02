@@ -155,19 +155,32 @@ public class Menu_Tridi_B_I extends javax.swing.JPanel {
                 Main_Frame.showPanel(this, CilindroHueco);
                 break;
             case "Cilindro inclinado":
-                
+                cilindroInclinado CilindroInclinado = new cilindroInclinado();
+                Main_Frame.showPanel(this, CilindroInclinado);
                 break;
             case "Cono":
+                cono Cono = new cono();
+                Main_Frame.showPanel(this, Cono);
                 break;
             case "Cono oblicuo":
+                conoOblicuo ConoOblicuo = new conoOblicuo();
+                Main_Frame.showPanel(this, ConoOblicuo);
                 break;
             case "Cubo":
+                cubo Cubo = new cubo();
+                Main_Frame.showPanel(this, Cubo);
                 break;
             case "Cuboctaedro":
+                cuboctaedro Cuboctaedro = new cuboctaedro();
+                Main_Frame.showPanel(this, Cuboctaedro);
                 break;
             case "Dodecaedro (Área)":
+                Adodecaedro ADodecaedro = new Adodecaedro();
+                Main_Frame.showPanel(this, ADodecaedro);
                 break;
             case "Dodecaedro (Volumen)":
+                Vdodecaedro VDodecaedro = new Vdodecaedro();
+                Main_Frame.showPanel(this, VDodecaedro);
                 break;
             case "Elipsoide":
                 break;

@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class Utiles {
     public static boolean validate(String num) {
-        if (num != null) {
+        if (!(num.isEmpty()) && num != null) {
             boolean band = true;
             if (num.charAt(0) == '-') {
                 num = num.substring(1);

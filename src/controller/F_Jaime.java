@@ -166,4 +166,18 @@ public class F_Jaime{
         //h : Altura
         return Utiles.redondear((float)((2 * Math.PI * R * h) + (2 * Math.PI * r * h) + (2 * Math.PI) * (Math.pow(R, 2) - Math.pow(r, 2))));
     }
+    
+    //Altura inclinada del cilindro inclinado
+    public static float alturaInclinada(float hvertical, float angulo){
+        return Utiles.redondear(hvertical/(float)Math.cos(angulo));
+    }
+    
+    public static float ejecutarCilindroInclinado(float hvertical, float angulo, float r){
+        //Angulo : angulo de inclinacion
+        //hvertical altura vertical
+        //r :Radio de las bases
+        float Hinclinado = alturaInclinada(hvertical, angulo);
+        return Utiles.redondear((float)((2 * Math.PI * r * Hinclinado) + (2 * Math.PI * Math.pow(r, 2))));
+    }
+    
 }
