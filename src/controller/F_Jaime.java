@@ -82,16 +82,16 @@ public class F_Jaime{
     }
 
     // calcular el volumen de la pirámide dodecagonal
-    public static float calcularVolumen(float l, float a) {
+    public static float calcularVolumenPiramiPentag(float l, float a) {
         float b = areaBaseDodecagonal(l);
         return (float) ((1.0 / 3.0) * b * a);
     }
     
-    public static float ejecutarcono(float r, float a) { // r = radio , a = altura
+    public static float ejecutarCono(float r, float a) { // r = radio , a = altura
         return (float) (Math.PI * r * (r + (Math.sqrt(r * r + a * a))));
     }
 
-    public static float ejecutarconoOblicuo(float r, float g) { // r = radio , g = longitud de la generatriz
+    public static float ejecutarConoOblicuo(float r, float g) { // r = radio , g = longitud de la generatriz
         return (float) (Math.PI * r * (r + g));
     }
 
@@ -137,6 +137,11 @@ public class F_Jaime{
 
     public static float ejecutarVolumenIcosaedro(float a) { // a = arista
         return (float) ((5 * (3 + Math.sqrt(5)) / 12) * Math.pow(a, 3));
+    }
+    
+    //Casquete esferico - Jaime
+    public static float ejecutarCasqueteEsferico(float R, float h) {
+        return (2 * (float) Math.PI * R * h);
     }
     
 }

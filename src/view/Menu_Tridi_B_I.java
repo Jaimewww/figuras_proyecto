@@ -6,7 +6,8 @@ package view;
 
 import fonts.Fonts;
 import javax.swing.JPanel;
-import view.FJaime.areaBipiramideCuadrada;
+import view.FJaime.bipiramideCuadrada;
+import view.FJaime.casqueteEsferico;
 
 /**
  *
@@ -133,10 +134,11 @@ public class Menu_Tridi_B_I extends javax.swing.JPanel {
     public void seleccion(String figura){
         switch (figura){
             case "Bipirámide cuadrada":
-                areaBipiramideCuadrada AreaBipiramideCuadrada = new areaBipiramideCuadrada();
-                Main_Frame.showPanel(bg, AreaBipiramideCuadrada);
+                bipiramideCuadrada BipiramideCuadrada = new bipiramideCuadrada();
+                Main_Frame.showPanel(bg, BipiramideCuadrada);
             case "Casquete esférico":
-                
+                casqueteEsferico CasqueteEsferico = new casqueteEsferico();
+                Main_Frame.showPanel(bg, CasqueteEsferico);
             case "Cilindro":
             case "Cilindro elíptico":
             case "Cilindro hueco":
