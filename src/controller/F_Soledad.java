@@ -1,26 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-package controller;
-
-=======
-=======
-
->>>>>>> 1622f9a937cc6c9dec4fce7900c4134313827bc3
-
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package controller;
 
 import utiles.Utiles;
-<<<<<<< HEAD
->>>>>>> Soledad
-=======
->>>>>>> 1622f9a937cc6c9dec4fce7900c4134313827bc3
 
 /**
  *
