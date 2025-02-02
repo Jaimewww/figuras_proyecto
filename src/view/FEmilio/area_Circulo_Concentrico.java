@@ -10,12 +10,12 @@ import fonts.Fonts;
  *
  * @author JAIMEUNL
  */
-public class area_Arco_circular extends javax.swing.JPanel {
+public class area_Circulo_Concentrico extends javax.swing.JPanel {
 
     /**
      * Creates new form Menu_Figuras
      */
-    public area_Arco_circular() {
+    public area_Circulo_Concentrico() {
         initComponents();
         btn_Regresar.setVisible(true);
     }
@@ -34,11 +34,11 @@ public class area_Arco_circular extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
-        txt_angulo_arco_circular = new java.awt.TextField();
         jLabel1 = new javax.swing.JLabel();
         btnArea_arco_circular = new javax.swing.JButton();
+        txtA_circulo_cencentrico = new java.awt.TextField();
+        txtA_circulo_cencentrico1 = new java.awt.TextField();
         jLabel2 = new javax.swing.JLabel();
-        txt_radio_arco_circular = new java.awt.TextField();
         jLabel5 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
@@ -47,7 +47,7 @@ public class area_Arco_circular extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Area Arco Circular");
+        jLabel3.setText("Circulo Concentrico");
 
         btn_Regresar.setText("Regresar");
         btn_Regresar.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 15));
@@ -58,16 +58,9 @@ public class area_Arco_circular extends javax.swing.JPanel {
             }
         });
 
-        txt_angulo_arco_circular.setBackground(new java.awt.Color(153, 153, 255));
-        txt_angulo_arco_circular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_angulo_arco_circularActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("INGRESE EL VALOR DEL RADIO DEL CIRCULO:");
+        jLabel1.setText("INGRESE EL VALOR DEL RADIO INTERIOR DEL CIRCULO:");
 
         btnArea_arco_circular.setBackground(new java.awt.Color(0, 102, 255));
         btnArea_arco_circular.setText("GENERAR");
@@ -77,94 +70,101 @@ public class area_Arco_circular extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("INGRESE EL VALOR DEL ÁNGULO CENTRAL:");
-
-        txt_radio_arco_circular.setBackground(new java.awt.Color(153, 153, 255));
-        txt_radio_arco_circular.addActionListener(new java.awt.event.ActionListener() {
+        txtA_circulo_cencentrico.setBackground(new java.awt.Color(153, 153, 255));
+        txtA_circulo_cencentrico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_radio_arco_circularActionPerformed(evt);
+                txtA_circulo_cencentricoActionPerformed(evt);
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/arco_circular.png"))); // NOI18N
+        txtA_circulo_cencentrico1.setBackground(new java.awt.Color(153, 153, 255));
+        txtA_circulo_cencentrico1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtA_circulo_cencentrico1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("INGRESE EL VALOR DEL RADIO EXTERIOR DEL CIRCULO:");
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Circulo Concentrico.png"))); // NOI18N
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+            .addGroup(bgLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGap(79, 79, 79)
                 .addComponent(btn_Regresar)
-                .addGap(29, 29, 29))
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(txt_radio_arco_circular, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txt_angulo_arco_circular, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(83, 83, 83)))
-                .addComponent(jLabel5)
-                .addGap(55, 55, 55))
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(309, 309, 309)
-                .addComponent(btnArea_arco_circular, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        bgLayout.setVerticalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(176, 176, 176))
             .addGroup(bgLayout.createSequentialGroup()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_Regresar)
-                            .addComponent(jLabel3))
-                        .addGap(29, 29, 29)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtA_circulo_cencentrico, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtA_circulo_cencentrico1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnArea_arco_circular, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(414, 414, 414))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(jLabel5)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        bgLayout.setVerticalGroup(
+            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_Regresar)
+                    .addComponent(jLabel3))
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtA_circulo_cencentrico1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_radio_arco_circular, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_angulo_arco_circular, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(jLabel5)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnArea_arco_circular)
-                .addGap(48, 48, 48))
+                            .addComponent(txtA_circulo_cencentrico, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                        .addComponent(btnArea_arco_circular)
+                        .addGap(42, 42, 42))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_RegresarActionPerformed
-
-    private void txt_angulo_arco_circularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_angulo_arco_circularActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_angulo_arco_circularActionPerformed
 
     private void btnArea_arco_circularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArea_arco_circularActionPerformed
         // TODO add your handling code here:
@@ -174,9 +174,13 @@ public class area_Arco_circular extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnArea_arco_circularActionPerformed
 
-    private void txt_radio_arco_circularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_radio_arco_circularActionPerformed
+    private void txtA_circulo_cencentricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtA_circulo_cencentricoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_radio_arco_circularActionPerformed
+    }//GEN-LAST:event_txtA_circulo_cencentricoActionPerformed
+
+    private void txtA_circulo_cencentrico1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtA_circulo_cencentrico1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtA_circulo_cencentrico1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -187,7 +191,7 @@ public class area_Arco_circular extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private java.awt.TextField txt_angulo_arco_circular;
-    private java.awt.TextField txt_radio_arco_circular;
+    private java.awt.TextField txtA_circulo_cencentrico;
+    private java.awt.TextField txtA_circulo_cencentrico1;
     // End of variables declaration//GEN-END:variables
 }
