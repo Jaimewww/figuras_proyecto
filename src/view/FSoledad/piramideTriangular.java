@@ -4,7 +4,11 @@
  */
 package view.FSoledad;
 
+import controller.F_Soledad;
 import fonts.Fonts;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Tridi_O_T;
 
 /**
  *
@@ -52,6 +56,8 @@ public class piramideTriangular extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         btn_Regresar1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        txt_Result = new javax.swing.JLabel();
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -144,6 +150,11 @@ public class piramideTriangular extends javax.swing.JPanel {
 
         btnOrtoedro1.setBackground(new java.awt.Color(0, 102, 255));
         btnOrtoedro1.setText("GENERAR");
+        btnOrtoedro1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrtoedro1ActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
@@ -159,6 +170,11 @@ public class piramideTriangular extends javax.swing.JPanel {
         });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gu.png"))); // NOI18N
+
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("TOTAL:");
+
+        txt_Result.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -192,7 +208,11 @@ public class piramideTriangular extends javax.swing.JPanel {
             .addGroup(bgLayout.createSequentialGroup()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(234, 234, 234)
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel14)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
                         .addComponent(btnOrtoedro1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(37, 37, 37)
@@ -205,13 +225,16 @@ public class piramideTriangular extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(btn_Regresar1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btn_Regresar1))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)
+                        .addComponent(btnOrtoedro1))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -224,12 +247,10 @@ public class piramideTriangular extends javax.swing.JPanel {
                                 .addComponent(txtlongitud1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtancho1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtaltura1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(45, 45, 45))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)))
-                .addComponent(btnOrtoedro1)
+                        .addGap(24, 24, 24)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(20, 20, 20))
         );
 
@@ -277,7 +298,17 @@ public class piramideTriangular extends javax.swing.JPanel {
 
     private void btn_Regresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Regresar1ActionPerformed
         // TODO add your handling code here:
+        Menu_Tridi_O_T  menu_Tridi_O_T = new Menu_Tridi_O_T ();
+        Main_Frame.showPanel(this, menu_Tridi_O_T);
     }//GEN-LAST:event_btn_Regresar1ActionPerformed
+
+    private void btnOrtoedro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrtoedro1ActionPerformed
+        // TODO add your handling code here:
+        if(Utiles.validate(txtlongitud1.getText()) && Utiles.validate(txtancho1.getText())&& Utiles.validate(txtaltura1.getText())){
+            Float resultado = F_Soledad.ejecutarPiramideTriangular(Utiles.transformStringFloat(txtlongitud1.getText()),Utiles.transformStringFloat(txtancho1.getText()),Utiles.transformStringFloat(txtaltura1.getText()));
+            txt_Result.setText(resultado.toString());
+        }
+    }//GEN-LAST:event_btnOrtoedro1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -288,6 +319,7 @@ public class piramideTriangular extends javax.swing.JPanel {
     private javax.swing.JButton btn_Regresar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -296,6 +328,7 @@ public class piramideTriangular extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel txt_Result;
     private java.awt.TextField txtaltura;
     private java.awt.TextField txtaltura1;
     private java.awt.TextField txtancho;

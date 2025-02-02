@@ -4,7 +4,11 @@
  */
 package view.FSoledad;
 
+import controller.F_Soledad;
 import fonts.Fonts;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Tridi_O_T;
 
 /**
  *
@@ -35,9 +39,11 @@ public class semiesfera extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        txtAOctaedro = new java.awt.TextField();
+        txtradio = new java.awt.TextField();
         btnAreaOctaedro = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        txt_Result = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
@@ -60,10 +66,10 @@ public class semiesfera extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("INGRESE EL VALOR DEL RADIO: ");
 
-        txtAOctaedro.setBackground(new java.awt.Color(153, 153, 255));
-        txtAOctaedro.addActionListener(new java.awt.event.ActionListener() {
+        txtradio.setBackground(new java.awt.Color(153, 153, 255));
+        txtradio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAOctaedroActionPerformed(evt);
+                txtradioActionPerformed(evt);
             }
         });
 
@@ -78,33 +84,44 @@ public class semiesfera extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/semiesfera.gif"))); // NOI18N
         jLabel2.setText("jLabel2");
 
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("TOTAL:");
+
+        txt_Result.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addContainerGap(146, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
-                .addComponent(btn_Regresar)
-                .addGap(28, 28, 28))
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addComponent(txtAOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(bgLayout.createSequentialGroup()
+                                        .addGap(60, 60, 60)
+                                        .addComponent(txtradio, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(bgLayout.createSequentialGroup()
+                                        .addGap(28, 28, 28)
+                                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(bgLayout.createSequentialGroup()
+                                                .addComponent(jLabel14)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel1))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(jLabel1)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnAreaOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnAreaOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)))
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                        .addContainerGap(165, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68)
+                        .addComponent(btn_Regresar)))
+                .addGap(28, 28, 28))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,14 +135,16 @@ public class semiesfera extends javax.swing.JPanel {
                         .addGap(45, 45, 45)
                         .addComponent(jLabel1)
                         .addGap(23, 23, 23)
-                        .addComponent(txtAOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                        .addComponent(btnAreaOctaedro)
-                        .addGap(45, 45, 45))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addGap(20, 20, 20))))
+                        .addComponent(txtradio, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAreaOctaedro)
+                            .addComponent(jLabel14)
+                            .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -142,15 +161,20 @@ public class semiesfera extends javax.swing.JPanel {
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
+        Menu_Tridi_O_T  menu_Tridi_O_T = new Menu_Tridi_O_T ();
+        Main_Frame.showPanel(this, menu_Tridi_O_T);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
-    private void txtAOctaedroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAOctaedroActionPerformed
+    private void txtradioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtradioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAOctaedroActionPerformed
+    }//GEN-LAST:event_txtradioActionPerformed
 
     private void btnAreaOctaedroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaOctaedroActionPerformed
         // TODO add your handling code here:
-
+        if(Utiles.validate(txtradio.getText())){
+            Float resultado = F_Soledad.ejecutarSemiEsfera(Utiles.transformStringFloat(txtradio.getText()));
+            txt_Result.setText(resultado.toString());
+        }
     }//GEN-LAST:event_btnAreaOctaedroActionPerformed
 
 
@@ -159,8 +183,10 @@ public class semiesfera extends javax.swing.JPanel {
     private javax.swing.JButton btnAreaOctaedro;
     private javax.swing.JButton btn_Regresar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private java.awt.TextField txtAOctaedro;
+    private javax.swing.JLabel txt_Result;
+    private java.awt.TextField txtradio;
     // End of variables declaration//GEN-END:variables
 }
