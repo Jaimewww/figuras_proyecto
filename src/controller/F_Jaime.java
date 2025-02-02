@@ -11,7 +11,7 @@ package controller;
 public class F_Jaime{
     
     //Octagono regular con apotema - Jaime
-    public static float ejecutarOctagonoRegularA(float s, float a) {
+    public static float ejecutarOctagonoRegular(float s, float a) {
         return ((7 * a) * s) / 2;
     }
     
@@ -78,4 +78,57 @@ public class F_Jaime{
         float b = areaBaseDodecagonal(l);
         return (float) ((1.0 / 3.0) * b * a);
     }
+    
+    public static float ejecutarcono(float r, float a) { // r = radio , a = altura
+        return (float) (Math.PI * r * (r + (Math.sqrt(r * r + a * a))));
+    }
+
+    public static float ejecutarconoOblicuo(float r, float g) { // r = radio , g = longitud de la generatriz
+        return (float) (Math.PI * r * (r + g));
+    }
+
+    public static float ejecutarCubo(float l) { // l = lado
+        return 6 * (float) Math.pow(l, 2);
+    }
+
+    public static float ejecutarCuboctaedro(float l) { // l = lado
+        return (float) (2 * (5 + Math.sqrt(3)) * Math.pow(l, 2));
+    }
+
+    public static float ejecutarAreaDodecaedro(float a) { //a = arista 
+        return (float) (3 * Math.sqrt(25 + 10 * Math.sqrt(5)) * Math.pow(a, 2));
+    }
+
+    public static float ejecutarVolumenDodecaedro(float a) { //a = arista 
+        return (float) (((15 + 7 * Math.sqrt(5)) * Math.pow(a, 3)) / 4);
+    }
+
+    public static float ejecutarElipsoide(float l, float h, float a) { // l = largo de un lado , h = altura , a = ancho
+        return (float) ((4 * Math.PI / 3) * l * a * h);
+    }
+
+    public static float ejecutarEsferahueca(float r, float R) { // r = radio Interno de la esfera, R Externo de la esfera
+        return (float) ((4 / 3) * Math.PI * ((Math.pow(R, 3)) - (Math.pow(r, 3))));
+    }
+
+    public static float ejecutarEsferaInclinada(float r, float h) { // r = esfera inclinada , h = altura esfera inclinada
+        return (float) ((Math.PI * Math.pow(h, 2) * (3 * r - h)) / 3);
+    }
+
+    public static float ejecutarEsferoideOblato(float e, float p) { // e = radio ecuatorial del esferoide oblato, p = radio polar del esferoide oblato
+        return (float) ((4 / 3) * Math.PI * Math.pow(e, 2) * p);
+    }
+
+    public static float ejecutarHemisfera(float r) { // r = radio
+        return (float) (3 * Math.PI * Math.pow(r, 2));
+    }
+
+    public static float ejecutarAreaIcosaedro(float a) { // a = arista
+        return (float) (5 * Math.sqrt(3) * Math.pow(a, 2));
+    }
+
+    public static float ejecutarVolumenIcosaedro(float a) { // a = arista
+        return (float) ((5 * (3 + Math.sqrt(5)) / 12) * Math.pow(a, 3));
+    }
+    
 }
