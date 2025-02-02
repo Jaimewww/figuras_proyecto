@@ -14,12 +14,12 @@ import view.Menu_Tridi_B_I;
  *
  * @author JAIMEUNL
  */
-public class Acilindro extends javax.swing.JPanel {
+public class cilindroEliptico extends javax.swing.JPanel {
 
     /**
      * Creates new form Menu_Figuras
      */
-    public Acilindro() {
+    public cilindroEliptico() {
         initComponents();
         btn_Regresar.setVisible(true);
     }
@@ -35,17 +35,20 @@ public class Acilindro extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSeparator1 = new javax.swing.JSeparator();
         bg = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
+        txt_mayor = new java.awt.TextField();
         jLabel1 = new javax.swing.JLabel();
         btnAreaOctaedro = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        txt_menor = new java.awt.TextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txt_Result = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txt_radio = new java.awt.TextField();
         txt_altura = new java.awt.TextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
@@ -53,7 +56,7 @@ public class Acilindro extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("AREA CILINDRO");
+        jLabel3.setText("AREA CILINDRO ELIPTICO");
 
         btn_Regresar.setText("Regresar");
         btn_Regresar.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 15));
@@ -64,9 +67,16 @@ public class Acilindro extends javax.swing.JPanel {
             }
         });
 
+        txt_mayor.setBackground(new java.awt.Color(153, 153, 255));
+        txt_mayor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_mayorActionPerformed(evt);
+            }
+        });
+
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("INGRESE EL VALOR DEL RADIO");
+        jLabel1.setText("INGRESE EL VALOR DEL SEMIEJE MAYOR");
 
         btnAreaOctaedro.setBackground(new java.awt.Color(0, 102, 255));
         btnAreaOctaedro.setText("GENERAR");
@@ -76,22 +86,22 @@ public class Acilindro extends javax.swing.JPanel {
             }
         });
 
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CilindroEliptico.png"))); // NOI18N
+
+        txt_menor.setBackground(new java.awt.Color(153, 153, 255));
+        txt_menor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_menorActionPerformed(evt);
+            }
+        });
+
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("INGRESE LA ALTURA DEL CILINDRO");
+        jLabel2.setText("INGRESE EL VALOR DEL SEMIEJE MENOR");
 
         jLabel5.setText("RESULTADO:");
 
         txt_Result.setText("...");
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cilindro.jpg"))); // NOI18N
-
-        txt_radio.setBackground(new java.awt.Color(153, 153, 255));
-        txt_radio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_radioActionPerformed(evt);
-            }
-        });
 
         txt_altura.setBackground(new java.awt.Color(153, 153, 255));
         txt_altura.addActionListener(new java.awt.event.ActionListener() {
@@ -100,40 +110,47 @@ public class Acilindro extends javax.swing.JPanel {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("INGRESE LA ALTURA");
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(145, 145, 145)
+                .addGap(99, 99, 99)
                 .addComponent(btn_Regresar)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(bgLayout.createSequentialGroup()
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel1))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(txt_mayor, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(txt_menor, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_altura, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_radio, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_altura, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(btnAreaOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(34, 34, 34)
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1))
-                        .addGap(47, 47, 47))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bgLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)))
-                .addComponent(jLabel6)
-                .addGap(80, 80, 80))
+                            .addComponent(btnAreaOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(58, 58, 58))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,37 +159,48 @@ public class Acilindro extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(btn_Regresar)
-                        .addGap(36, 36, 36))
+                        .addGap(32, 32, 32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)))
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(12, Short.MAX_VALUE))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_radio, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(txt_mayor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_altura, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAreaOctaedro)
-                            .addComponent(jLabel5)
-                            .addComponent(txt_Result)))
-                    .addComponent(jLabel6))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(txt_menor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel6)
+                                .addGap(1, 1, 1)
+                                .addComponent(txt_altura, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnAreaOctaedro)
+                                .addGap(18, 18, 18)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(txt_Result))
+                                .addGap(39, 39, 39))))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -183,20 +211,24 @@ public class Acilindro extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
+    private void txt_mayorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_mayorActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txt_mayorActionPerformed
+
     private void btnAreaOctaedroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaOctaedroActionPerformed
         // TODO add your handling code here:
         
-        if(Utiles.validate(txt_radio.getText()) && Utiles.validate(txt_altura.getText())){
-            Float resultado = F_Jaime.ejecutarCilindro(Utiles.transformStringFloat(txt_radio.getText()), Utiles.transformStringFloat(txt_altura.getText()));
+        if(Utiles.validate(txt_mayor.getText()) && Utiles.validate(txt_menor.getText()) && Utiles.validate(txt_altura.getText())){
+            Float resultado = F_Jaime.ejecutarCilindroEliptico(Utiles.transformStringFloat(txt_mayor.getText()), Utiles.transformStringFloat(txt_menor.getText()), Utiles.transformStringFloat(txt_altura.getText()));
             txt_Result.setText(resultado.toString());
         }
         
     }//GEN-LAST:event_btnAreaOctaedroActionPerformed
 
-    private void txt_radioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_radioActionPerformed
+    private void txt_menorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_menorActionPerformed
         // TODO add your handling code here:
-
-    }//GEN-LAST:event_txt_radioActionPerformed
+    }//GEN-LAST:event_txt_menorActionPerformed
 
     private void txt_alturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_alturaActionPerformed
         // TODO add your handling code here:
@@ -210,10 +242,13 @@ public class Acilindro extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel txt_Result;
     private java.awt.TextField txt_altura;
-    private java.awt.TextField txt_radio;
+    private java.awt.TextField txt_mayor;
+    private java.awt.TextField txt_menor;
     // End of variables declaration//GEN-END:variables
 }
