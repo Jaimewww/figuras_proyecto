@@ -1,0 +1,61 @@
+/build/
+# Archivos generados por el compilador
+*.class
+*.war
+*.ear
+*.jar
+
+# Directorios de compilación y dependencias
+/target/
+/build/
+/bin/
+/dist/
+out/
+dependency-reduced-pom.xml
+
+# NetBeans específico
+/nbproject/private/
+/nbproject/project.properties
+/nbproject/project.xml
+/build.xml
+/nbbuild/
+/.nb-gradle/
+*.orig
+
+# Archivos temporales del IDE
+*.swp
+*.swo
+*~
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+*.lnk
+
+# Archivos de logs y bases de datos
+*.log
+*.sql
+*.db
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+
+# Gradle (si se usa)
+.gradle/
+/build/
+
+# Archivos de entorno y configuración sensible
+.env
+*.key
+*.cert
+
+# Archivos de IntelliJ (por si se abre en otros IDEs)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Archivos de VS Code (opcional)
+.vscode/
