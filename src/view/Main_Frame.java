@@ -8,6 +8,7 @@ import javax.swing.UIManager;
 import fonts.Fonts;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import utiles.MusicLoader;
 
 /**
@@ -162,12 +163,25 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_muteActionPerformed
 
     public static void showPanel(JPanel elim, JPanel p) {
-        p.setSize(610, 240);
-        p.setLocation(0, 0);
-        elim.removeAll();
-        elim.add(p, BorderLayout.CENTER);
-        elim.revalidate();
-        elim.repaint();
+        if (elim == null || p == null) {
+            throw new IllegalArgumentException("Los paneles no pueden ser nulos");
+        }
+
+        SwingUtilities.invokeLater(() -> {
+            elim.removeAll();
+
+            if (!(elim.getLayout() instanceof BorderLayout)) {
+                elim.setLayout(new BorderLayout());
+            }
+
+            elim.add(p, BorderLayout.CENTER);
+
+            elim.revalidate();
+            elim.repaint();
+
+            p.revalidate();
+            p.repaint();
+        });
     }
     
     public void setClippyText(String text){

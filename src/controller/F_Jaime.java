@@ -4,14 +4,22 @@
  */
 package controller;
 
+import utiles.Utiles;
+
 /**
  *
  * @author JAIMEUNL
  */
 public class F_Jaime{
+    //Bipiramide Cuadrada
+    public static float ejecutarBipiramideCuadrada(float b, float l){
+        //b: Longitud de un lado de la base cuadrada.
+        //l: Altura inclinada (apotema) de una cara triangular.
+        return Utiles.redondear(4 * b * l);
+    }
     
     //Octagono regular con apotema - Jaime
-    public static float ejecutarOctagonoRegularA(float s, float a) {
+    public static float ejecutarOctagonoRegular(float s, float a) {
         return ((7 * a) * s) / 2;
     }
     

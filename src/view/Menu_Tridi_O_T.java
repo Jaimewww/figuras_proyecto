@@ -10,17 +10,18 @@ import fonts.Fonts;
  *
  * @author JAIMEUNL
  */
-public class Menu_Tridimensionales extends javax.swing.JPanel {
+public class Menu_Tridi_O_T extends javax.swing.JPanel {
 
     /**
      * Creates new form Menu_Figuras
      */
-    public Menu_Tridimensionales() {
+    public Menu_Tridi_O_T() {
         initComponents();
         btn_Regresar.setVisible(true);
     }
+    
     Fonts tipoFuente = new Fonts();
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,30 +32,14 @@ public class Menu_Tridimensionales extends javax.swing.JPanel {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        btn_p_t = new javax.swing.JButton();
-        btn_a_o = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        btn_p_t = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
-
-        btn_p_t.setText("O - T");
-        btn_p_t.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));
-        btn_p_t.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_p_tActionPerformed(evt);
-            }
-        });
-
-        btn_a_o.setText("B - I");
-        btn_a_o.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));
-        btn_a_o.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_a_oActionPerformed(evt);
-            }
-        });
 
         jLabel3.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 20));
         jLabel3.setText("Figuras Tridimensionales");
@@ -68,37 +53,47 @@ public class Menu_Tridimensionales extends javax.swing.JPanel {
             }
         });
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Octaedro (Área)", "Octaedro (Volumen)", "Ortoedro", "Paralelepípedo", "Pirámide cuadrada", "Pirámide dodecagonal", "Pirámide hexagonal", "Pirámide oblicua", "Pirámide pentagonal", "Pirámide triangular", "Pirámide truncada", "Prisma dodecagonal", "Prisma hexagonal", "Prisma pentagonal", "Prisma rectangular", "Prisma triangular", "Semiesfera", "Tetraedro (Área)", "Tetraedro (Volumen)", "Toroide" }));
+
+        btn_p_t.setText("Abrir Calculadora");
+        btn_p_t.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));
+        btn_p_t.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_p_tActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(74, Short.MAX_VALUE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(156, 156, 156))
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(btn_p_t, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addComponent(btn_Regresar)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                        .addComponent(btn_a_o, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_p_t, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(155, 155, 155))))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+            .addGroup(bgLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btn_Regresar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(btn_Regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_p_t, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_a_o, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_p_t, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(75, 75, 75))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -113,30 +108,22 @@ public class Menu_Tridimensionales extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_p_tActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_tActionPerformed
-        // TODO add your handling code here:
-        Menu_Tridi_O_T menu_Tridi_O_T = new Menu_Tridi_O_T();
-        Main_Frame.showPanel(bg, menu_Tridi_O_T);
-    }//GEN-LAST:event_btn_p_tActionPerformed
-
-    private void btn_a_oActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_a_oActionPerformed
-        // TODO add your handling code here:
-        Menu_Tridi_B_I menu_Tridi_B_I = new Menu_Tridi_B_I();
-        Main_Frame.showPanel(bg, menu_Tridi_B_I);
-    }//GEN-LAST:event_btn_a_oActionPerformed
-
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
-        Menu_Figuras menu_Figuras = new Menu_Figuras();
-        Main_Frame.showPanel(bg, menu_Figuras);
+        Menu_Tridimensionales menu_Tridimensionales = new Menu_Tridimensionales();
+        Main_Frame.showPanel(bg, menu_Tridimensionales);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
+    private void btn_p_tActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_tActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_p_tActionPerformed
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JButton btn_Regresar;
-    private javax.swing.JButton btn_a_o;
     private javax.swing.JButton btn_p_t;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

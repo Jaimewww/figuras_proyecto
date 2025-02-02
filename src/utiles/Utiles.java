@@ -5,9 +5,8 @@
  */
 package utiles;
 
-import java.awt.BorderLayout;
 import java.util.Random;
-import javax.swing.JPanel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,6 +23,7 @@ public class Utiles {
             int cont_p = 0;
             for (int i = 0; i < num.length(); i++) {
                 if (!Character.isDigit(num.charAt(i)) && num.charAt(i) != '.') {
+                    JOptionPane.showMessageDialog(null, "Ingrese un numero valido", "Error", JOptionPane.ERROR_MESSAGE);
                     band = false;
                     break;
                 } else if (num.charAt(i) == '.') {
@@ -31,10 +31,12 @@ public class Utiles {
                 }
             }
             if (cont_p >= 2) {
+                JOptionPane.showMessageDialog(null, "Ingrese un numero valido", "Error", JOptionPane.ERROR_MESSAGE);
                 band = false;
             }
             return band;
         } else {
+            JOptionPane.showMessageDialog(null, "Ingrese un numero valido", "Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
     }
