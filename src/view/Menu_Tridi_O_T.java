@@ -6,7 +6,6 @@ package view;
 
 import fonts.Fonts;
 import javax.swing.JPanel;
-import view.FJaime.areaBipiramideCuadrada;
 import view.FSoledad.Atetraedro;
 import view.FSoledad.Vtetraedro;
 import view.FSoledad.octaedro;

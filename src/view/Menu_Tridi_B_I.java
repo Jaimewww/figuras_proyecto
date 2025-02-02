@@ -6,8 +6,9 @@ package view;
 
 import fonts.Fonts;
 import javax.swing.JPanel;
-import view.FJaime.areaBipiramideCuadrada;
-
+import view.FJaime.bipiramideCuadrada;
+import view.FJaime.casqueteEsferico;
+import view.FJaime.*;
 /**
  *
  * @author JAIMEUNL
@@ -118,12 +119,13 @@ public class Menu_Tridi_B_I extends javax.swing.JPanel {
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
         Menu_Tridimensionales menu_Tridimensionales = new Menu_Tridimensionales();
-        Main_Frame.showPanel(bg, menu_Tridimensionales);
+        Main_Frame.showPanel(this, menu_Tridimensionales);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
     private void btn_abrirCalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_abrirCalcActionPerformed
         // TODO add your handling code here:
-        seleccion(combo_B_I.getSelectedItem().toString());
+        String figura = combo_B_I.getSelectedItem().toString();
+        seleccion(figura);
     }//GEN-LAST:event_btn_abrirCalcActionPerformed
     
     public void regresar(JPanel panel){
@@ -133,27 +135,51 @@ public class Menu_Tridi_B_I extends javax.swing.JPanel {
     public void seleccion(String figura){
         switch (figura){
             case "Bipirámide cuadrada":
-                areaBipiramideCuadrada AreaBipiramideCuadrada = new areaBipiramideCuadrada();
-                Main_Frame.showPanel(bg, AreaBipiramideCuadrada);
+                bipiramideCuadrada BipiramideCuadrada = new bipiramideCuadrada();
+                Main_Frame.showPanel(this, BipiramideCuadrada);
+                break;
             case "Casquete esférico":
-                
+                casqueteEsferico CasqueteEsferico = new casqueteEsferico();
+                Main_Frame.showPanel(this, CasqueteEsferico);
+                break;
             case "Cilindro":
+                Acilindro acilindro = new Acilindro();
+                Main_Frame.showPanel(this, acilindro);
+                break;
             case "Cilindro elíptico":
+                cilindroEliptico CilindroEliptico = new cilindroEliptico();
+                Main_Frame.showPanel(this, CilindroEliptico);
+                break;
             case "Cilindro hueco":
+                break;
             case "Cilindro inclinado":
+                break;
             case "Cono":
+                break;
             case "Cono oblicuo":
+                break;
             case "Cubo":
+                break;
             case "Cuboctaedro":
+                break;
             case "Dodecaedro (Área)":
+                break;
             case "Dodecaedro (Volumen)":
+                break;
             case "Elipsoide":
+                break;
             case "Esfera hueca":
+                break;
             case "Esfera inclinada":
+                break;
             case "Esferoide oblato":
+                break;
             case "Hemisfera":
+                break;
             case "Icosaedro (Área)":
+                break;
             case "Icosaedro (Volumen)":
+                break;
         }
                 
     }

@@ -2,24 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package view.FSoledad;
+package view.FEmilio;
 
-import controller.F_Soledad;
 import fonts.Fonts;
-import utiles.Utiles;
-import view.Main_Frame;
-import view.Menu_Tridi_O_T;
 
 /**
  *
  * @author JAIMEUNL
  */
-public class Atetraedro extends javax.swing.JPanel {
+public class area_Circulo extends javax.swing.JPanel {
 
     /**
      * Creates new form Menu_Figuras
      */
-    public Atetraedro() {
+    public area_Circulo() {
         initComponents();
         btn_Regresar.setVisible(true);
     }
@@ -39,11 +35,9 @@ public class Atetraedro extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        txtarista = new java.awt.TextField();
-        btnAreaOctaedro = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        btnArea_arco_circular = new javax.swing.JButton();
+        txtA_circulo = new java.awt.TextField();
         jLabel2 = new javax.swing.JLabel();
-        txt_Result = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
@@ -51,7 +45,7 @@ public class Atetraedro extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("AREA TETRAEDRO");
+        jLabel3.setText("Area Circulo");
 
         btn_Regresar.setText("Regresar");
         btn_Regresar.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 15));
@@ -64,29 +58,24 @@ public class Atetraedro extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("INGRESE EL VALOR DE LA ARISTA: ");
+        jLabel1.setText("INGRESE EL VALOR DEL RADIO DEL CIRCULO:");
 
-        txtarista.setBackground(new java.awt.Color(153, 153, 255));
-        txtarista.addActionListener(new java.awt.event.ActionListener() {
+        btnArea_arco_circular.setBackground(new java.awt.Color(0, 102, 255));
+        btnArea_arco_circular.setText("GENERAR");
+        btnArea_arco_circular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtaristaActionPerformed(evt);
+                btnArea_arco_circularActionPerformed(evt);
             }
         });
 
-        btnAreaOctaedro.setBackground(new java.awt.Color(0, 102, 255));
-        btnAreaOctaedro.setText("GENERAR");
-        btnAreaOctaedro.addActionListener(new java.awt.event.ActionListener() {
+        txtA_circulo.setBackground(new java.awt.Color(153, 153, 255));
+        txtA_circulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAreaOctaedroActionPerformed(evt);
+                txtA_circuloActionPerformed(evt);
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tetraedro.png"))); // NOI18N
-
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("TOTAL:");
-
-        txt_Result.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/circulo.png"))); // NOI18N
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -95,59 +84,52 @@ public class Atetraedro extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
+                .addGap(66, 66, 66)
                 .addComponent(btn_Regresar)
-                .addGap(22, 22, 22))
+                .addGap(29, 29, 29))
             .addGroup(bgLayout.createSequentialGroup()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(txtarista, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addComponent(btnArea_arco_circular, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
+                        .addGap(30, 30, 30)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                                .addComponent(btnAreaOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(56, 56, 56)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69))
+                                .addGap(49, 49, 49)
+                                .addComponent(txtA_circulo, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(93, 93, 93))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(16, 16, 16)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_Regresar)
                     .addComponent(jLabel3))
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(11, Short.MAX_VALUE))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
+                        .addGap(32, 32, 32)
                         .addComponent(jLabel1)
-                        .addGap(23, 23, 23)
-                        .addComponent(txtarista, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addComponent(txtA_circulo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAreaOctaedro))
-                        .addGap(27, 27, 27))))
+                        .addComponent(btnArea_arco_circular)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,34 +139,28 @@ public class Atetraedro extends javax.swing.JPanel {
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
-        Menu_Tridi_O_T  menu_Tridi_O_T = new Menu_Tridi_O_T ();
-        Main_Frame.showPanel(this, menu_Tridi_O_T);
-        
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
-    private void txtaristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaristaActionPerformed
+    private void btnArea_arco_circularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArea_arco_circularActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtaristaActionPerformed
-
-    private void btnAreaOctaedroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaOctaedroActionPerformed
-        // TODO add your handling code here:
-        if(Utiles.validate(txtarista.getText()) && Utiles.validate(txtarista.getText())){
-            Float resultado = F_Soledad.ejecutarTetraedroArea(Utiles.transformStringFloat(txtarista.getText()));
-            txt_Result.setText(resultado.toString());
-        }
         
-    }//GEN-LAST:event_btnAreaOctaedroActionPerformed
+        
+        
+        
+    }//GEN-LAST:event_btnArea_arco_circularActionPerformed
+
+    private void txtA_circuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtA_circuloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtA_circuloActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    private javax.swing.JButton btnAreaOctaedro;
+    private javax.swing.JButton btnArea_arco_circular;
     private javax.swing.JButton btn_Regresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel txt_Result;
-    private java.awt.TextField txtarista;
+    private java.awt.TextField txtA_circulo;
     // End of variables declaration//GEN-END:variables
 }

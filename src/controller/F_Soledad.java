@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 package controller;
 
 =======
+=======
+
+>>>>>>> 1622f9a937cc6c9dec4fce7900c4134313827bc3
 
 
 /*
@@ -13,7 +17,10 @@ package controller;
 package controller;
 
 import utiles.Utiles;
+<<<<<<< HEAD
 >>>>>>> Soledad
+=======
+>>>>>>> 1622f9a937cc6c9dec4fce7900c4134313827bc3
 
 /**
  *
