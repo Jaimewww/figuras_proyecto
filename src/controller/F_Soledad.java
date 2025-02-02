@@ -20,6 +20,10 @@ public class F_Soledad {
     public static float ejecutarOrtoedro(float l, float w, float h) { // 3
         return (2 * l * w) + (2 * l * h) + (2 * w * h); // l = longitud  - w = ancho- h = altua
     }
+    
+    
+    
+    
     public static float ejecutarParalelepipedo(float a, float b, float c) { // a = lado - b = lado - c = lado
         return 2 * ((a * b) + (a * c) + (b * c));  
     }
