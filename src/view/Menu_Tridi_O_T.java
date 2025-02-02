@@ -10,12 +10,12 @@ import fonts.Fonts;
  *
  * @author JAIMEUNL
  */
-public class Menu_Bidi_P_T extends javax.swing.JPanel {
+public class Menu_Tridi_O_T extends javax.swing.JPanel {
 
     /**
      * Creates new form Menu_Figuras
      */
-    public Menu_Bidi_P_T() {
+    public Menu_Tridi_O_T() {
         initComponents();
         btn_Regresar.setVisible(true);
     }
@@ -42,7 +42,7 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 20));
-        jLabel3.setText("Figuras Bidimensionales");
+        jLabel3.setText("Figuras Tridimensionales");
 
         btn_Regresar.setText("Regresar");
         btn_Regresar.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 15));
@@ -53,7 +53,7 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paralelogramo", "Pentágono", "Polígono regular", "Rectángulo", "Rombo", "Romboide", "Sector circular", "Segmento circular", "Segmento elíptico", "Semicírculo", "Trapecio circular", "Trapecio isósceles", "Triángulo", "Triángulo equilátero", "Triángulo escaleno", "Triqueta" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Octaedro (Área)", "Octaedro (Volumen)", "Ortoedro", "Paralelepípedo", "Pirámide cuadrada", "Pirámide dodecagonal", "Pirámide hexagonal", "Pirámide oblicua", "Pirámide pentagonal", "Pirámide triangular", "Pirámide truncada", "Prisma dodecagonal", "Prisma hexagonal", "Prisma pentagonal", "Prisma rectangular", "Prisma triangular", "Semiesfera", "Tetraedro (Área)", "Tetraedro (Volumen)", "Toroide" }));
 
         btn_p_t.setText("Abrir Calculadora");
         btn_p_t.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));
@@ -110,14 +110,14 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
-        Menu_Bidimensionales menu_Bidimensionales = new Menu_Bidimensionales();
-        Main_Frame.showPanel(bg, menu_Bidimensionales);
+        Menu_Tridimensionales menu_Tridimensionales = new Menu_Tridimensionales();
+        Main_Frame.showPanel(bg, menu_Tridimensionales);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
     private void btn_p_tActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_tActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_p_tActionPerformed
-
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;

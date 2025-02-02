@@ -45,9 +45,9 @@
                   <EmptySpace pref="74" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jComboBox1" min="-2" pref="136" max="-2" attributes="0"/>
+                          <Component id="combo_B_I" min="-2" pref="136" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="btn_p_t" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="btn_abrirCalc" min="-2" pref="332" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -71,8 +71,8 @@
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComboBox1" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="btn_p_t" alignment="3" min="-2" pref="67" max="-2" attributes="0"/>
+                      <Component id="combo_B_I" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="btn_abrirCalc" alignment="3" min="-2" pref="67" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
               </Group>
@@ -99,42 +99,48 @@
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btn_Regresar.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 15));&#xa;btn_Regresar.setVisible(false);"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="combo_B_I">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="16">
-                <StringItem index="0" value="Paralelogramo"/>
-                <StringItem index="1" value="Pent&#xe1;gono"/>
-                <StringItem index="2" value="Pol&#xed;gono regular"/>
-                <StringItem index="3" value="Rect&#xe1;ngulo"/>
-                <StringItem index="4" value="Rombo"/>
-                <StringItem index="5" value="Romboide"/>
-                <StringItem index="6" value="Sector circular"/>
-                <StringItem index="7" value="Segmento circular"/>
-                <StringItem index="8" value="Segmento el&#xed;ptico"/>
-                <StringItem index="9" value="Semic&#xed;rculo"/>
-                <StringItem index="10" value="Trapecio circular"/>
-                <StringItem index="11" value="Trapecio is&#xf3;sceles"/>
-                <StringItem index="12" value="Tri&#xe1;ngulo"/>
-                <StringItem index="13" value="Tri&#xe1;ngulo equil&#xe1;tero"/>
-                <StringItem index="14" value="Tri&#xe1;ngulo escaleno"/>
-                <StringItem index="15" value="Triqueta"/>
+              <StringArray count="19">
+                <StringItem index="0" value="Bipir&#xe1;mide cuadrada"/>
+                <StringItem index="1" value="Casquete esf&#xe9;rico"/>
+                <StringItem index="2" value="Cilindro"/>
+                <StringItem index="3" value="Cilindro el&#xed;ptico"/>
+                <StringItem index="4" value="Cilindro hueco"/>
+                <StringItem index="5" value="Cilindro inclinado"/>
+                <StringItem index="6" value="Cono"/>
+                <StringItem index="7" value="Cono oblicuo"/>
+                <StringItem index="8" value="Cubo"/>
+                <StringItem index="9" value="Cuboctaedro"/>
+                <StringItem index="10" value="Dodecaedro (&#xc1;rea)"/>
+                <StringItem index="11" value="Dodecaedro (Volumen)"/>
+                <StringItem index="12" value="Elipsoide"/>
+                <StringItem index="13" value="Esfera hueca"/>
+                <StringItem index="14" value="Esfera inclinada"/>
+                <StringItem index="15" value="Esferoide oblato"/>
+                <StringItem index="16" value="Hemisfera"/>
+                <StringItem index="17" value="Icosaedro (&#xc1;rea)"/>
+                <StringItem index="18" value="Icosaedro (Volumen)"/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="combo_B_IActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_p_t">
+        <Component class="javax.swing.JButton" name="btn_abrirCalc">
           <Properties>
             <Property name="text" type="java.lang.String" value="Abrir Calculadora"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_p_tActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_abrirCalcActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btn_p_t.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btn_abrirCalc.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));"/>
           </AuxValues>
         </Component>
       </SubComponents>

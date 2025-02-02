@@ -5,17 +5,19 @@
 package view;
 
 import fonts.Fonts;
+import javax.swing.JPanel;
+import view.FJaime.areaBipiramideCuadrada;
 
 /**
  *
  * @author JAIMEUNL
  */
-public class Menu_Bidi_P_T extends javax.swing.JPanel {
+public class Menu_Tridi_B_I extends javax.swing.JPanel {
 
     /**
      * Creates new form Menu_Figuras
      */
-    public Menu_Bidi_P_T() {
+    public Menu_Tridi_B_I() {
         initComponents();
         btn_Regresar.setVisible(true);
     }
@@ -34,8 +36,8 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        btn_p_t = new javax.swing.JButton();
+        combo_B_I = new javax.swing.JComboBox<>();
+        btn_abrirCalc = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
@@ -53,13 +55,18 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paralelogramo", "Pentágono", "Polígono regular", "Rectángulo", "Rombo", "Romboide", "Sector circular", "Segmento circular", "Segmento elíptico", "Semicírculo", "Trapecio circular", "Trapecio isósceles", "Triángulo", "Triángulo equilátero", "Triángulo escaleno", "Triqueta" }));
-
-        btn_p_t.setText("Abrir Calculadora");
-        btn_p_t.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));
-        btn_p_t.addActionListener(new java.awt.event.ActionListener() {
+        combo_B_I.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bipirámide cuadrada", "Casquete esférico", "Cilindro", "Cilindro elíptico", "Cilindro hueco", "Cilindro inclinado", "Cono", "Cono oblicuo", "Cubo", "Cuboctaedro", "Dodecaedro (Área)", "Dodecaedro (Volumen)", "Elipsoide", "Esfera hueca", "Esfera inclinada", "Esferoide oblato", "Hemisfera", "Icosaedro (Área)", "Icosaedro (Volumen)" }));
+        combo_B_I.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_p_tActionPerformed(evt);
+                combo_B_IActionPerformed(evt);
+            }
+        });
+
+        btn_abrirCalc.setText("Abrir Calculadora");
+        btn_abrirCalc.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));
+        btn_abrirCalc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_abrirCalcActionPerformed(evt);
             }
         });
 
@@ -71,9 +78,9 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
                 .addContainerGap(74, Short.MAX_VALUE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(combo_B_I, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(btn_p_t, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_abrirCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addComponent(btn_Regresar)
@@ -91,8 +98,8 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_p_t, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combo_B_I, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_abrirCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(75, 75, 75))
         );
 
@@ -110,20 +117,57 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
-        Menu_Bidimensionales menu_Bidimensionales = new Menu_Bidimensionales();
-        Main_Frame.showPanel(bg, menu_Bidimensionales);
+        Menu_Tridimensionales menu_Tridimensionales = new Menu_Tridimensionales();
+        Main_Frame.showPanel(bg, menu_Tridimensionales);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
-    private void btn_p_tActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_tActionPerformed
+    private void btn_abrirCalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_abrirCalcActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_p_tActionPerformed
+        seleccion(combo_B_I.getSelectedItem().toString());
+    }//GEN-LAST:event_btn_abrirCalcActionPerformed
+    
+    public void regresar(JPanel panel){
+        Main_Frame.showPanel(this, panel);
+    }
+    
+    public void seleccion(String figura){
+        switch (figura){
+            case "Bipirámide cuadrada":
+                areaBipiramideCuadrada AreaBipiramideCuadrada = new areaBipiramideCuadrada();
+                Main_Frame.showPanel(bg, AreaBipiramideCuadrada);
+            case "Casquete esférico":
+                
+            case "Cilindro":
+            case "Cilindro elíptico":
+            case "Cilindro hueco":
+            case "Cilindro inclinado":
+            case "Cono":
+            case "Cono oblicuo":
+            case "Cubo":
+            case "Cuboctaedro":
+            case "Dodecaedro (Área)":
+            case "Dodecaedro (Volumen)":
+            case "Elipsoide":
+            case "Esfera hueca":
+            case "Esfera inclinada":
+            case "Esferoide oblato":
+            case "Hemisfera":
+            case "Icosaedro (Área)":
+            case "Icosaedro (Volumen)":
+        }
+                
+    }
+    
+    private void combo_B_IActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_B_IActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_B_IActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JButton btn_Regresar;
-    private javax.swing.JButton btn_p_t;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btn_abrirCalc;
+    private javax.swing.JComboBox<String> combo_B_I;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
