@@ -5,7 +5,10 @@
 package view.FAlex;
 
 import fonts.Fonts;
-
+import controller.F_Alex;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Bidi_P_T;
 /**
  *
  * @author JAIMEUNL
@@ -42,7 +45,7 @@ public class areaTrapeciocircular extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtarea = new javax.swing.JLabel();
-        txtaltura1 = new java.awt.TextField();
+        txtradio = new java.awt.TextField();
         jLabel6 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
@@ -65,7 +68,7 @@ public class areaTrapeciocircular extends javax.swing.JPanel {
         });
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel5.setText("BASE RADIO INTERIOR:");
+        jLabel5.setText(" RADIO INTERIOR:");
 
         txtinterior.setBackground(new java.awt.Color(255, 255, 204));
         txtinterior.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +90,11 @@ public class areaTrapeciocircular extends javax.swing.JPanel {
         btngenerar.setBackground(new java.awt.Color(255, 255, 153));
         btngenerar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btngenerar.setText("GENERAR");
+        btngenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngenerarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/TRAPECIOCIRCULAR.png"))); // NOI18N
 
@@ -95,10 +103,10 @@ public class areaTrapeciocircular extends javax.swing.JPanel {
 
         txtarea.setText("0.0");
 
-        txtaltura1.setBackground(new java.awt.Color(255, 255, 204));
-        txtaltura1.addActionListener(new java.awt.event.ActionListener() {
+        txtradio.setBackground(new java.awt.Color(255, 255, 204));
+        txtradio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtaltura1ActionPerformed(evt);
+                txtradioActionPerformed(evt);
             }
         });
 
@@ -128,8 +136,8 @@ public class areaTrapeciocircular extends javax.swing.JPanel {
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                                        .addComponent(txtaltura1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtradio, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(btn_Regresar)
                                             .addComponent(jLabel4))))))
@@ -166,7 +174,7 @@ public class areaTrapeciocircular extends javax.swing.JPanel {
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtexterior, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtinterior, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtaltura1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtradio, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(21, 21, 21)
                         .addComponent(btngenerar)
                         .addGap(25, 25, 25)
@@ -201,11 +209,21 @@ public class areaTrapeciocircular extends javax.swing.JPanel {
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
+        Menu_Bidi_P_T menu_Bidi_P_T = new Menu_Bidi_P_T();
+        Main_Frame.showPanel(bg, menu_Bidi_P_T);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
-    private void txtaltura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaltura1ActionPerformed
+    private void txtradioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtradioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtaltura1ActionPerformed
+    }//GEN-LAST:event_txtradioActionPerformed
+
+    private void btngenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngenerarActionPerformed
+        // TODO add your handling code here:
+        if(Utiles.validate(txtradio.getText()) && Utiles.validate(txtexterior.getText()) && Utiles.validate(txtinterior.getText())){
+            Float resulatado = F_Alex.trapecioCircular(Utiles.transformStringFloat(txtradio.getText()), Utiles.transformStringFloat(txtexterior.getText()), Utiles.transformStringFloat(txtinterior.getText()));
+            txtarea.setText(resulatado.toString());
+        }
+    }//GEN-LAST:event_btngenerarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -218,9 +236,9 @@ public class areaTrapeciocircular extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private java.awt.TextField txtaltura1;
     private javax.swing.JLabel txtarea;
     private java.awt.TextField txtexterior;
     private java.awt.TextField txtinterior;
+    private java.awt.TextField txtradio;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,10 @@
 package view.FAlex;
 
 import fonts.Fonts;
+import controller.F_Alex;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Bidi_P_T;
 
 /**
  *
@@ -35,20 +39,19 @@ public class areaPoligonoregular extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        txtapotema = new java.awt.TextField();
-        txtperimetro = new java.awt.TextField();
+        txtlado = new java.awt.TextField();
         jLabel1 = new javax.swing.JLabel();
         btngenerar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtarea = new javax.swing.JLabel();
-        txtapotema1 = new java.awt.TextField();
-        jLabel6 = new javax.swing.JLabel();
+        txtapotema = new java.awt.TextField();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setPreferredSize(new java.awt.Dimension(610, 240));
+        bg.setVerifyInputWhenFocusTarget(false);
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setText("AREA POLIGONOREGULAR");
@@ -65,7 +68,33 @@ public class areaPoligonoregular extends javax.swing.JPanel {
         });
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel5.setText("INGRESE BASE MENOR:");
+        jLabel5.setText("INGRESE APOTEMA:");
+
+        txtlado.setBackground(new java.awt.Color(255, 255, 204));
+        txtlado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtladoActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel1.setText("INGRESE  LADO: ");
+
+        btngenerar.setBackground(new java.awt.Color(255, 255, 153));
+        btngenerar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btngenerar.setText("GENERAR");
+        btngenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngenerarActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/POLIGONOREGULAR.png"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel2.setText("EL AREA ES:");
+
+        txtarea.setText("0.0");
 
         txtapotema.setBackground(new java.awt.Color(255, 255, 204));
         txtapotema.addActionListener(new java.awt.event.ActionListener() {
@@ -73,37 +102,6 @@ public class areaPoligonoregular extends javax.swing.JPanel {
                 txtapotemaActionPerformed(evt);
             }
         });
-
-        txtperimetro.setBackground(new java.awt.Color(255, 255, 204));
-        txtperimetro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtperimetroActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel1.setText("INGRESE BASE MAYOR: ");
-
-        btngenerar.setBackground(new java.awt.Color(255, 255, 153));
-        btngenerar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btngenerar.setText("GENERAR");
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/TRAPECIOCIRCULAR.png"))); // NOI18N
-
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel2.setText("EL AREA ES:");
-
-        txtarea.setText("0.0");
-
-        txtapotema1.setBackground(new java.awt.Color(255, 255, 204));
-        txtapotema1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtapotema1ActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel6.setText("INGRESE ALTURA:");
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -120,19 +118,13 @@ public class areaPoligonoregular extends javax.swing.JPanel {
                         .addContainerGap())
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6))
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(txtperimetro, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(15, 15, 15)
-                                .addComponent(txtapotema1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtapotema, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(157, 170, Short.MAX_VALUE))
+                            .addComponent(txtlado, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(15, 15, 15)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(txtapotema, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(302, 315, Short.MAX_VALUE))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
@@ -156,13 +148,11 @@ public class areaPoligonoregular extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel5))
                 .addGap(19, 19, 19)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtperimetro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtapotema, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtapotema1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtlado, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtapotema, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -185,25 +175,31 @@ public class areaPoligonoregular extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 241, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 240, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtperimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtperimetroActionPerformed
+    private void txtladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtladoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtperimetroActionPerformed
+    }//GEN-LAST:event_txtladoActionPerformed
+
+    private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
+        // TODO add your handling code here:
+        Menu_Bidi_P_T menu_Bidi_P_T = new Menu_Bidi_P_T();
+        Main_Frame.showPanel(bg, menu_Bidi_P_T);
+    }//GEN-LAST:event_btn_RegresarActionPerformed
 
     private void txtapotemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtapotemaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtapotemaActionPerformed
 
-    private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
+    private void btngenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngenerarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_RegresarActionPerformed
-
-    private void txtapotema1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtapotema1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtapotema1ActionPerformed
+        if(Utiles.validate(txtapotema.getText()) && Utiles.validate(txtlado.getText())){
+            Float resulatado = F_Alex.poligonoRegular(Utiles.transformStringFloat(txtlado.getText()), Utiles.transformStringFloat(txtapotema.getText()));
+            txtarea.setText(resulatado.toString());
+        }
+    }//GEN-LAST:event_btngenerarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -215,10 +211,8 @@ public class areaPoligonoregular extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private java.awt.TextField txtapotema;
-    private java.awt.TextField txtapotema1;
     private javax.swing.JLabel txtarea;
-    private java.awt.TextField txtperimetro;
+    private java.awt.TextField txtlado;
     // End of variables declaration//GEN-END:variables
 }

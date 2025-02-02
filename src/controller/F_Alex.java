@@ -1,10 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
-import javax.swing.text.Utilities;
 import utiles.Utiles;
 
 /**
@@ -15,6 +10,7 @@ public class F_Alex {
 
     // Paralelogramo Alex_Sigcho
     public static Float paralelogramo(Float base, Float altura) {
+
         Float area = base * altura;
         return Utiles.redondear(area);
     }
@@ -24,9 +20,8 @@ public class F_Alex {
         Float area = ((5 * lado) * apotema) / 2;
         return Utiles.redondear(area);
     }
-
     // Polígono regular Alex_Sigcho
-    public static  Float poligonoRegular(Float perimetro, Float apotema) {
+    public static  Float poligonoRegular(Float perimetro, Float apotema) {    
         Float area = (perimetro * apotema) / 2;
         return Utiles.redondear(area);
     }
@@ -97,7 +92,7 @@ public class F_Alex {
         Float area = (float) ((Math.pow(lado, 2)) / 4);
         return Utiles.redondear(area);
     }
-
+    
     // Triángulo escaleno Alex_Sigcho
     public static Float trianguloEscaleno(Float base, Float altura) {
         Float area = (base * altura) / 2;

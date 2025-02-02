@@ -42,13 +42,13 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace pref="74" max="32767" attributes="0"/>
+                  <EmptySpace pref="64" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="combo_B_I" min="-2" pref="136" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="btn_abrirCalc" min="-2" pref="332" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="btn_Regresar" min="-2" max="-2" attributes="0"/>
@@ -85,7 +85,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="tipoFuente.fuente(tipoFuente.FSEX, 1, 20)" type="code"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Figuras Bidimensionales"/>
+            <Property name="text" type="java.lang.String" value="Figuras Tridimensionales"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btn_Regresar">

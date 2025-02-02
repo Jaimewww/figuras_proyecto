@@ -5,7 +5,22 @@
 package view;
 
 import fonts.Fonts;
-
+import javax.swing.JPanel;
+import view.FAlex.areaParalelogramo;
+import view.FAlex.areaPentagono;
+import view.FAlex.areaRombo;
+import view.FAlex.areaRomboide;
+import view.FAlex.areaSectorcircular;
+import view.FAlex.areaSegmentocircular;
+import view.FAlex.areaSegmentoeliptico;
+import view.FAlex.areaSemicirculo;
+import view.FAlex.areaTrapeciocircular;
+import view.FAlex.areaTrapecioisoceles;
+import view.FAlex.areaTriangulo;
+import view.FAlex.areaTrianguloequilatero;
+import view.FAlex.areaTrianguloescaleno;
+import view.FAlex.areaTriqueta;
+import view.FAlex.*;
 /**
  *
  * @author JAIMEUNL
@@ -34,8 +49,8 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        btn_p_t = new javax.swing.JButton();
+        cbxfigurasA = new javax.swing.JComboBox<>();
+        btnabrircal = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
@@ -53,13 +68,18 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paralelogramo", "Pentágono", "Polígono regular", "Rectángulo", "Rombo", "Romboide", "Sector circular", "Segmento circular", "Segmento elíptico", "Semicírculo", "Trapecio circular", "Trapecio isósceles", "Triángulo", "Triángulo equilátero", "Triángulo escaleno", "Triqueta" }));
-
-        btn_p_t.setText("Abrir Calculadora");
-        btn_p_t.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));
-        btn_p_t.addActionListener(new java.awt.event.ActionListener() {
+        cbxfigurasA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paralelogramo", "Pentágono", "Polígono regular", "Rectángulo", "Rombo", "Romboide", "Sector circular", "Segmento circular", "Segmento elíptico", "Semicírculo", "Trapecio circular", "Trapecio isósceles", "Triángulo", "Triángulo equilátero", "Triángulo escaleno", "Triqueta" }));
+        cbxfigurasA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_p_tActionPerformed(evt);
+                cbxfigurasAActionPerformed(evt);
+            }
+        });
+
+        btnabrircal.setText("Abrir Calculadora");
+        btnabrircal.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));
+        btnabrircal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnabrircalActionPerformed(evt);
             }
         });
 
@@ -71,9 +91,9 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
                 .addContainerGap(74, Short.MAX_VALUE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbxfigurasA, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(btn_p_t, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnabrircal, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addComponent(btn_Regresar)
@@ -91,8 +111,8 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_p_t, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxfigurasA, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnabrircal, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(75, 75, 75))
         );
 
@@ -111,19 +131,97 @@ public class Menu_Bidi_P_T extends javax.swing.JPanel {
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
         Menu_Bidimensionales menu_Bidimensionales = new Menu_Bidimensionales();
-        Main_Frame.showPanel(bg, menu_Bidimensionales);
+        Main_Frame.showPanel(this, menu_Bidimensionales);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
-    private void btn_p_tActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_tActionPerformed
+    private void btnabrircalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnabrircalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_p_tActionPerformed
+         String figura = cbxfigurasA.getSelectedItem().toString();
+        seleccione(figura);
+    }//GEN-LAST:event_btnabrircalActionPerformed
+public void regresar(JPanel panel){
+        Main_Frame.showPanel(this, panel);
+    }
+    
+    public void seleccione(String figura){
+        switch (figura){
+            case "Paralelogramo":
+                areaParalelogramo paralelogramo = new areaParalelogramo();
+                Main_Frame.showPanel(this, paralelogramo);
+                break;
+            case "Pentágono":
+                areaPentagono pentagono = new areaPentagono();
+                Main_Frame.showPanel(this, pentagono);
+                break;
+            case "Polígono regular":
+                areaPoligonoregular poligonoregular = new areaPoligonoregular();
+                Main_Frame.showPanel(this, poligonoregular);
+                break;
+            case "Rectángulo":
+                areaRectangulo rectangulo = new areaRectangulo();
+                Main_Frame.showPanel(this, rectangulo);
+                break;
+            case "Rombo":
+                areaRombo rombo = new areaRombo();
+                Main_Frame.showPanel(this, rombo);
+                break;
+            case "Romboide":
+                areaRomboide romboide= new areaRomboide();
+                Main_Frame.showPanel(this, romboide);
+                break;
+            case "Sector circular":
+                areaSectorcircular sectorcircular = new areaSectorcircular();
+                Main_Frame.showPanel(this, sectorcircular);
+                break;
+            case "Segmento circular":
+                areaSegmentocircular segmentociecular = new areaSegmentocircular();
+                Main_Frame.showPanel(this, segmentociecular);
+                break;
+            case "Segmento elíptico":
+                areaSegmentoeliptico segmentoeliptico = new areaSegmentoeliptico();
+                Main_Frame.showPanel(this, segmentoeliptico);
+                break;
+            case "Semicírculo":
+                areaSemicirculo semicirculo = new areaSemicirculo();
+                Main_Frame.showPanel(this, semicirculo);
+                break;
+            case "Trapecio circular":
+                areaTrapeciocircular trapeciocircular = new areaTrapeciocircular();
+                Main_Frame.showPanel(this, trapeciocircular);
+                break;
+            case "Trapecio isósceles":
+                areaTrapecioisoceles trapeciosisoceles = new areaTrapecioisoceles();
+                Main_Frame.showPanel(this, trapeciosisoceles);
+                break;
+            case "Triángulo":
+                areaTriangulo triangulo = new areaTriangulo();
+                Main_Frame.showPanel(this, triangulo);
+                break;
+            case "Triángulo equilátero":
+                areaTrianguloequilatero trianguloequilatero = new areaTrianguloequilatero();
+                Main_Frame.showPanel(this, trianguloequilatero);
+                break;
+            case "Triángulo escaleno":
+                areaTrianguloescaleno trianguloescaleno = new areaTrianguloescaleno();
+                Main_Frame.showPanel(this, trianguloescaleno);
+                break;
+            case "Triqueta":
+                areaTriqueta triqueta = new areaTriqueta();
+                Main_Frame.showPanel(this, triqueta);
+                break;
+        }
+                
+    }
+    private void cbxfigurasAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxfigurasAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxfigurasAActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JButton btn_Regresar;
-    private javax.swing.JButton btn_p_t;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnabrircal;
+    private javax.swing.JComboBox<String> cbxfigurasA;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

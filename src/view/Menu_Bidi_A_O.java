@@ -5,6 +5,21 @@
 package view;
 
 import fonts.Fonts;
+import javax.swing.JPanel;
+import view.FAlex.areaParalelogramo;
+import view.FAlex.areaPentagono;
+import view.FAlex.areaRombo;
+import view.FAlex.areaRomboide;
+import view.FAlex.areaSectorcircular;
+import view.FAlex.areaSegmentocircular;
+import view.FAlex.areaSegmentoeliptico;
+import view.FAlex.areaSemicirculo;
+import view.FAlex.areaTrapeciocircular;
+import view.FAlex.areaTrapecioisoceles;
+import view.FAlex.areaTriangulo;
+import view.FAlex.areaTrianguloequilatero;
+import view.FAlex.areaTrianguloescaleno;
+import view.FAlex.areaTriqueta;
 
 /**
  *
@@ -32,21 +47,21 @@ public class Menu_Bidi_A_O extends javax.swing.JPanel {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        btn_p_t = new javax.swing.JButton();
+        btnabrircalc = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         btn_Regresar = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbxfigurasA = new javax.swing.JComboBox<>();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setPreferredSize(new java.awt.Dimension(610, 240));
 
-        btn_p_t.setText("Abrir Calculadora");
-        btn_p_t.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));
-        btn_p_t.addActionListener(new java.awt.event.ActionListener() {
+        btnabrircalc.setText("Abrir Calculadora");
+        btnabrircalc.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));
+        btnabrircalc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_p_tActionPerformed(evt);
+                btnabrircalcActionPerformed(evt);
             }
         });
 
@@ -62,7 +77,12 @@ public class Menu_Bidi_A_O extends javax.swing.JPanel {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arco circular", "Círculo", "Círculo concéntrico", "Corona circular", "Corazón", "Decágono", "Dodecágono", "Elipse", "Eneágono", "Estrella de 5 puntas", "Estrella de 6 puntas", "Heptágono", "Hexágono", "Octágono", "Octágono regular con apotema" }));
+        cbxfigurasA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arco circular", "Círculo", "Círculo concéntrico", "Corona circular", "Corazón", "Decágono", "Dodecágono", "Elipse", "Eneágono", "Estrella de 5 puntas", "Estrella de 6 puntas", "Heptágono", "Hexágono", "Octágono", "Octágono regular con apotema" }));
+        cbxfigurasA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxfigurasAActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -70,9 +90,9 @@ public class Menu_Bidi_A_O extends javax.swing.JPanel {
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
                 .addGap(62, 62, 62)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbxfigurasA, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(btn_p_t, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnabrircalc, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(48, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -93,8 +113,8 @@ public class Menu_Bidi_A_O extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_p_t, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnabrircalc, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxfigurasA, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(69, 69, 69))
         );
 
@@ -110,22 +130,77 @@ public class Menu_Bidi_A_O extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_p_tActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_tActionPerformed
+    private void btnabrircalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnabrircalcActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_p_tActionPerformed
-
+        seleccion(cbxfigurasA.getSelectedItem().toString());
+    }//GEN-LAST:event_btnabrircalcActionPerformed
+public void regresar(JPanel panel){
+        Main_Frame.showPanel(this, panel);
+    }
+    
+    public void seleccion(String figura){
+        switch (figura){
+            case "Paralelogramo":
+                areaParalelogramo paralelogramo = new areaParalelogramo();
+                Main_Frame.showPanel(bg, paralelogramo);
+            case "Pentagono":
+                areaPentagono pentagono = new areaPentagono();
+                Main_Frame.showPanel(bg, pentagono);
+            case "Rombo":
+                areaRombo rombo = new areaRombo();
+                Main_Frame.showPanel(bg, rombo);
+            case "Romboide":
+                areaRomboide romboide= new areaRomboide();
+                Main_Frame.showPanel(bg, romboide);
+            case "Sector circular":
+                areaSectorcircular sectorcircular = new areaSectorcircular();
+                Main_Frame.showPanel(bg, sectorcircular);
+            case "Segmento circular":
+                areaSegmentocircular segmentociecular = new areaSegmentocircular();
+                Main_Frame.showPanel(bg, segmentociecular);
+            case "Segmento elíptico":
+                areaSegmentoeliptico segmentoeliptico = new areaSegmentoeliptico();
+                Main_Frame.showPanel(bg, segmentoeliptico);
+            case "Semicírculo":
+                areaSemicirculo semicirculo = new areaSemicirculo();
+                Main_Frame.showPanel(bg, semicirculo);
+            case "Trapecio circular":
+                areaTrapeciocircular trapeciocircular = new areaTrapeciocircular();
+                Main_Frame.showPanel(bg, trapeciocircular);
+            case "Trapecio isósceles":
+                areaTrapecioisoceles trapeciosisoceles = new areaTrapecioisoceles();
+                Main_Frame.showPanel(bg, trapeciosisoceles);
+            case "Triángulo":
+                areaTriangulo triangulo = new areaTriangulo();
+                Main_Frame.showPanel(bg, triangulo);
+            case "Triángulo equilátero":
+                areaTrianguloequilatero trianguloequilatero = new areaTrianguloequilatero();
+                Main_Frame.showPanel(bg, trianguloequilatero);
+            case "Triángulo escaleno":
+                areaTrianguloescaleno trianguloescaleno = new areaTrianguloescaleno();
+                Main_Frame.showPanel(bg, trianguloescaleno);
+            case "Triqueta":
+                areaTriqueta triqueta = new areaTriqueta();
+                Main_Frame.showPanel(bg, triqueta);
+        }
+                
+    }
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
         Menu_Bidimensionales menu_Bidimensionales = new Menu_Bidimensionales();
         Main_Frame.showPanel(bg, menu_Bidimensionales);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
+    private void cbxfigurasAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxfigurasAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxfigurasAActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JButton btn_Regresar;
-    private javax.swing.JButton btn_p_t;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnabrircalc;
+    private javax.swing.JComboBox<String> cbxfigurasA;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

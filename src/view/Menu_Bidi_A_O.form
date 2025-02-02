@@ -46,9 +46,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                  <Component id="jComboBox1" min="-2" pref="136" max="-2" attributes="0"/>
+                  <Component id="cbxfigurasA" min="-2" pref="136" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="btn_p_t" min="-2" pref="332" max="-2" attributes="0"/>
+                  <Component id="btnabrircalc" min="-2" pref="332" max="-2" attributes="0"/>
                   <EmptySpace pref="48" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
@@ -75,8 +75,8 @@
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btn_p_t" alignment="3" min="-2" pref="67" max="-2" attributes="0"/>
-                      <Component id="jComboBox1" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="btnabrircalc" alignment="3" min="-2" pref="67" max="-2" attributes="0"/>
+                      <Component id="cbxfigurasA" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               </Group>
@@ -84,15 +84,15 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btn_p_t">
+        <Component class="javax.swing.JButton" name="btnabrircalc">
           <Properties>
             <Property name="text" type="java.lang.String" value="Abrir Calculadora"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_p_tActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnabrircalcActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btn_p_t.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnabrircalc.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 30));"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
@@ -114,7 +114,7 @@
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btn_Regresar.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 15));&#xa;btn_Regresar.setVisible(false);"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="cbxfigurasA">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="15">
@@ -136,6 +136,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxfigurasAActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>

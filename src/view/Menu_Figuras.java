@@ -95,14 +95,14 @@ public class Menu_Figuras extends javax.swing.JPanel {
         //Menu_Bidimensionales menu_Bidimensionales = new Menu_Bidimensionales();
         //Main_Frame.showPanel(bg, menu_Bidimensionales);
         Menu_Bidimensionales menu_Bidimensionales = new Menu_Bidimensionales(); 
-        Main_Frame.showPanel(bg, menu_Bidimensionales);
+        Main_Frame.showPanel(this, menu_Bidimensionales);
         
     }//GEN-LAST:event_btn_bidimensionalesActionPerformed
 
     private void btn_tridimensionalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tridimensionalesActionPerformed
         // TODO add your handling code here:
         Menu_Tridimensionales menu_Tridimensionales = new Menu_Tridimensionales();
-        Main_Frame.showPanel(bg, menu_Tridimensionales);
+        Main_Frame.showPanel(this, menu_Tridimensionales);
     }//GEN-LAST:event_btn_tridimensionalesActionPerformed
 
 

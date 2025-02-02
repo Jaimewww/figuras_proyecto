@@ -45,7 +45,7 @@ public class Menu_Tridi_B_I extends javax.swing.JPanel {
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 20));
-        jLabel3.setText("Figuras Bidimensionales");
+        jLabel3.setText("Figuras Tridimensionales");
 
         btn_Regresar.setText("Regresar");
         btn_Regresar.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 15));
@@ -76,13 +76,13 @@ public class Menu_Tridi_B_I extends javax.swing.JPanel {
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
+                .addContainerGap(64, Short.MAX_VALUE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addComponent(combo_B_I, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
+                        .addGap(38, 38, 38)
                         .addComponent(btn_abrirCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41))
+                        .addGap(39, 39, 39))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addComponent(btn_Regresar)
                         .addContainerGap())
