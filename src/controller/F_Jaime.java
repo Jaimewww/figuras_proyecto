@@ -139,9 +139,6 @@ public class F_Jaime{
         return Utiles.redondear((float) ((5 * (3 + Math.sqrt(5)) / 12) * Math.pow(a, 3)));
     }
     
-<<<<<<< HEAD
-}
-=======
     //Casquete esferico - Jaime
     public static float ejecutarCasqueteEsferico(float R, float h) {
         return Utiles.redondear(2 * (float) Math.PI * R * h);
@@ -170,4 +167,3 @@ public class F_Jaime{
         return 
     }
 }
->>>>>>> 3f42f4e6c8d93e2135ed6f91a0f88b11539da3aa

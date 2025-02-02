@@ -5,14 +5,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-<<<<<<< HEAD
-package controller;
-=======
 
 package controller;
 
 import utiles.Utiles;
->>>>>>> 3f42f4e6c8d93e2135ed6f91a0f88b11539da3aa
 
 /**
  *
