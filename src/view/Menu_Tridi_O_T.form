@@ -85,7 +85,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="tipoFuente.fuente(tipoFuente.FSEX, 1, 20)" type="code"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Figuras Bidimensionales"/>
+            <Property name="text" type="java.lang.String" value="Figuras Tridimensionales"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btn_Regresar">
@@ -102,23 +102,27 @@
         <Component class="javax.swing.JComboBox" name="jComboBox1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="16">
-                <StringItem index="0" value="Paralelogramo"/>
-                <StringItem index="1" value="Pent&#xe1;gono"/>
-                <StringItem index="2" value="Pol&#xed;gono regular"/>
-                <StringItem index="3" value="Rect&#xe1;ngulo"/>
-                <StringItem index="4" value="Rombo"/>
-                <StringItem index="5" value="Romboide"/>
-                <StringItem index="6" value="Sector circular"/>
-                <StringItem index="7" value="Segmento circular"/>
-                <StringItem index="8" value="Segmento el&#xed;ptico"/>
-                <StringItem index="9" value="Semic&#xed;rculo"/>
-                <StringItem index="10" value="Trapecio circular"/>
-                <StringItem index="11" value="Trapecio is&#xf3;sceles"/>
-                <StringItem index="12" value="Tri&#xe1;ngulo"/>
-                <StringItem index="13" value="Tri&#xe1;ngulo equil&#xe1;tero"/>
-                <StringItem index="14" value="Tri&#xe1;ngulo escaleno"/>
-                <StringItem index="15" value="Triqueta"/>
+              <StringArray count="20">
+                <StringItem index="0" value="Octaedro (&#xc1;rea)"/>
+                <StringItem index="1" value="Octaedro (Volumen)"/>
+                <StringItem index="2" value="Ortoedro"/>
+                <StringItem index="3" value="Paralelep&#xed;pedo"/>
+                <StringItem index="4" value="Pir&#xe1;mide cuadrada"/>
+                <StringItem index="5" value="Pir&#xe1;mide dodecagonal"/>
+                <StringItem index="6" value="Pir&#xe1;mide hexagonal"/>
+                <StringItem index="7" value="Pir&#xe1;mide oblicua"/>
+                <StringItem index="8" value="Pir&#xe1;mide pentagonal"/>
+                <StringItem index="9" value="Pir&#xe1;mide triangular"/>
+                <StringItem index="10" value="Pir&#xe1;mide truncada"/>
+                <StringItem index="11" value="Prisma dodecagonal"/>
+                <StringItem index="12" value="Prisma hexagonal"/>
+                <StringItem index="13" value="Prisma pentagonal"/>
+                <StringItem index="14" value="Prisma rectangular"/>
+                <StringItem index="15" value="Prisma triangular"/>
+                <StringItem index="16" value="Semiesfera"/>
+                <StringItem index="17" value="Tetraedro (&#xc1;rea)"/>
+                <StringItem index="18" value="Tetraedro (Volumen)"/>
+                <StringItem index="19" value="Toroide"/>
               </StringArray>
             </Property>
           </Properties>
