@@ -4,10 +4,8 @@
  */
 package controller;
 
-<<<<<<< HEAD
-import jdk.jshell.execution.Util;
-=======
->>>>>>> 1acaf1bfef836fdd91fafc3f0613d96f0b5e9bb2
+
+
 import utiles.Utiles;
 
 /**
@@ -79,7 +77,6 @@ public class F_Emilio {
         return Utiles.redondear(area);
     }
 
-<<<<<<< HEAD
     public static float Ejecutar_circulo(float r) {
         float area = (float) (Math.pow(r, 2) * Math.PI);
         return Utiles.redondear(area);
@@ -129,16 +126,4 @@ public class F_Emilio {
         float area = (1 / 2.0f) * perimetro * ap;
         return Utiles.redondear(area); 
     }
-=======
-    public static float Ejecutar_circulo (float r) {
-        float area = (float) (Math.pow(r, 2)*Math.PI);
-        return Utiles.redondear(area);
-    }
-    
-    public static float Ejecutar_Circulo_Concentrico (float r, float R) {
-        float area = (float) ((Math.pow(R, 2)-Math.pow(r, 2))*Math.PI);
-        return Utiles.redondear(area);
-    }
-
->>>>>>> 1acaf1bfef836fdd91fafc3f0613d96f0b5e9bb2
 }
