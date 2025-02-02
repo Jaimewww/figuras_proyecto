@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package view;
+package view.FSoledad;
 
 import fonts.Fonts;
 
@@ -10,12 +10,12 @@ import fonts.Fonts;
  *
  * @author JAIMEUNL
  */
-public class piramidePentagonal extends javax.swing.JPanel {
+public class prismaDodecagonal extends javax.swing.JPanel {
 
     /**
      * Creates new form Menu_Figuras
      */
-    public piramidePentagonal() {
+    public prismaDodecagonal() {
         initComponents();
         btn_Regresar.setVisible(true);
     }
@@ -40,6 +40,7 @@ public class piramidePentagonal extends javax.swing.JPanel {
         btn_Regresar1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtVOctaedro1 = new java.awt.TextField();
+        jLabel5 = new javax.swing.JLabel();
 
         btn_Regresar.setText("Regresar");
         btn_Regresar.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 15));
@@ -56,7 +57,7 @@ public class piramidePentagonal extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("PIRAMIDE PENTAGONAL");
+        jLabel3.setText("PRISMA DODECAGONAL");
 
         txtVOctaedro.setBackground(new java.awt.Color(255, 153, 102));
         txtVOctaedro.addActionListener(new java.awt.event.ActionListener() {
@@ -92,38 +93,39 @@ public class piramidePentagonal extends javax.swing.JPanel {
             }
         });
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dodeca.png"))); // NOI18N
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(txtVOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(487, 487, 487))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnVolumenOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(302, 302, 302))
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(bgLayout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(txtVOctaedro1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel2))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                        .addGap(232, 232, 232)
+                        .addComponent(txtVOctaedro1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnVolumenOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(151, 151, 151)))
+                .addComponent(jLabel5)
+                .addGap(66, 66, 66))
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(btn_Regresar1)
-                .addGap(23, 23, 23))
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(txtVOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel2))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(136, 136, 136)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addComponent(btn_Regresar1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,20 +141,23 @@ public class piramidePentagonal extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtVOctaedro1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtVOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(btnVolumenOctaedro)
-                .addGap(33, 33, 33))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtVOctaedro1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtVOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39)
+                        .addComponent(btnVolumenOctaedro)))
+                .addGap(56, 56, 56))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,6 +190,7 @@ public class piramidePentagonal extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private java.awt.TextField txtVOctaedro;
     private java.awt.TextField txtVOctaedro1;
     // End of variables declaration//GEN-END:variables

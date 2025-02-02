@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package view;
+package view.FSoledad;
 
 import fonts.Fonts;
 
@@ -10,12 +10,12 @@ import fonts.Fonts;
  *
  * @author JAIMEUNL
  */
-public class ortoedro extends javax.swing.JPanel {
+public class prismaPentagonal extends javax.swing.JPanel {
 
     /**
      * Creates new form Menu_Figuras
      */
-    public ortoedro() {
+    public prismaPentagonal() {
         initComponents();
         btn_Regresar.setVisible(true);
     }
@@ -51,7 +51,7 @@ public class ortoedro extends javax.swing.JPanel {
         btnOrtoedro1 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         btn_Regresar1 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -111,7 +111,7 @@ public class ortoedro extends javax.swing.JPanel {
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("INGRESE ANCHO:");
+        jLabel7.setText("INGRESE EL APOTEMA:");
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -140,14 +140,14 @@ public class ortoedro extends javax.swing.JPanel {
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("INGRESE LONGITUD: ");
+        jLabel9.setText("INGRESE EL LADO:");
 
         btnOrtoedro1.setBackground(new java.awt.Color(0, 102, 255));
         btnOrtoedro1.setText("GENERAR");
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("AREA ORTOEDRO");
+        jLabel11.setText("AREA  PRISMA PENTAGONAL");
 
         btn_Regresar1.setText("Regresar");
         btn_Regresar.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 15));
@@ -158,75 +158,82 @@ public class ortoedro extends javax.swing.JPanel {
             }
         });
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/or.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pentagonal.jpg"))); // NOI18N
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(234, 234, 234)
-                .addComponent(btnOrtoedro1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(0, 136, Short.MAX_VALUE)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(89, 89, 89)
-                        .addComponent(btn_Regresar1)
-                        .addGap(23, 23, 23))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(23, 23, 23)
                                 .addComponent(jLabel9)
-                                .addGap(27, 27, 27)
+                                .addGap(34, 34, 34)
                                 .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
                                 .addComponent(jLabel8))
                             .addGroup(bgLayout.createSequentialGroup()
+                                .addContainerGap()
                                 .addComponent(txtlongitud1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtancho1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtancho1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtaltura1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel10)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                                .addComponent(btnOrtoedro1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(175, 175, 175))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_Regresar1)
+                    .addComponent(jLabel4))
+                .addGap(29, 29, 29))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel11))
+                        .addComponent(btn_Regresar1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(btn_Regresar1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addGap(19, 19, 19)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(txtlongitud1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtancho1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtaltura1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel10))
-                .addGap(18, 18, 18)
-                .addComponent(btnOrtoedro1)
-                .addGap(20, 20, 20))
+                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(24, 24, 24)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8))
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(bgLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtlongitud1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtaltura1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtancho1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addComponent(btnOrtoedro1)))
+                .addGap(27, 27, 27))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,10 +281,10 @@ public class ortoedro extends javax.swing.JPanel {
     private javax.swing.JButton btn_Regresar;
     private javax.swing.JButton btn_Regresar1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

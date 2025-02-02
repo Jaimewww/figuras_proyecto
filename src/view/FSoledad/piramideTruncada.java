@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package view;
+package view.FSoledad;
 
 import fonts.Fonts;
 
@@ -10,12 +10,12 @@ import fonts.Fonts;
  *
  * @author JAIMEUNL
  */
-public class prismaTriangular extends javax.swing.JPanel {
+public class piramideTruncada extends javax.swing.JPanel {
 
     /**
      * Creates new form Menu_Figuras
      */
-    public prismaTriangular() {
+    public piramideTruncada() {
         initComponents();
         btn_Regresar.setVisible(true);
     }
@@ -43,19 +43,16 @@ public class prismaTriangular extends javax.swing.JPanel {
         btnOrtoedro = new javax.swing.JButton();
         bg = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         txtancho1 = new java.awt.TextField();
+        txtaltura1 = new java.awt.TextField();
         txtlongitud1 = new java.awt.TextField();
         jLabel9 = new javax.swing.JLabel();
         btnOrtoedro1 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         btn_Regresar1 = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
-        txtlongitud2 = new java.awt.TextField();
-        txtlongitud3 = new java.awt.TextField();
-        jLabel13 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtancho2 = new java.awt.TextField();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -115,12 +112,23 @@ public class prismaTriangular extends javax.swing.JPanel {
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("ALTURA PRISMA:");
+        jLabel7.setText("LADO BASE MENOR:");
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("ALTURA LATERAL:");
 
         txtancho1.setBackground(new java.awt.Color(153, 153, 255));
         txtancho1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtancho1ActionPerformed(evt);
+            }
+        });
+
+        txtaltura1.setBackground(new java.awt.Color(153, 153, 255));
+        txtaltura1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtaltura1ActionPerformed(evt);
             }
         });
 
@@ -133,14 +141,14 @@ public class prismaTriangular extends javax.swing.JPanel {
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("LADO A:");
+        jLabel9.setText("LADO BASE MAYOR:");
 
         btnOrtoedro1.setBackground(new java.awt.Color(0, 102, 255));
         btnOrtoedro1.setText("GENERAR");
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("AREA  PRISMA TRIANGULAR");
+        jLabel11.setText("AREA  PRIRAMIDE TRUNCADA");
 
         btn_Regresar1.setText("Regresar");
         btn_Regresar.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 15));
@@ -151,40 +159,7 @@ public class prismaTriangular extends javax.swing.JPanel {
             }
         });
 
-        jLabel12.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("LADO B:");
-
-        txtlongitud2.setBackground(new java.awt.Color(153, 153, 255));
-        txtlongitud2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtlongitud2ActionPerformed(evt);
-            }
-        });
-
-        txtlongitud3.setBackground(new java.awt.Color(153, 153, 255));
-        txtlongitud3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtlongitud3ActionPerformed(evt);
-            }
-        });
-
-        jLabel13.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel13.setText("LADO C:");
-
-        jLabel10.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("ALTURA TRIANGULO:");
-
-        txtancho2.setBackground(new java.awt.Color(153, 153, 255));
-        txtancho2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtancho2ActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/triangular.jpg"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/truncada.png"))); // NOI18N
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -193,90 +168,74 @@ public class prismaTriangular extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtlongitud1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtlongitud2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtlongitud3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13))
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabel7))
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtancho1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtancho2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10)))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addGap(0, 110, Short.MAX_VALUE)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_Regresar1)
-                        .addGap(31, 31, 31))
+                        .addGap(23, 23, 23))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jLabel4)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addComponent(txtlongitud1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8))
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel7))
+                            .addComponent(txtancho1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(jLabel8))
+                            .addComponent(txtaltura1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel10)
+                        .addGap(46, 46, 46))))
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(187, 187, 187)
+                .addGap(239, 239, 239)
                 .addComponent(btnOrtoedro1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(btn_Regresar1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(24, 24, 24)
+                        .addGap(14, 14, 14)
+                        .addComponent(btn_Regresar1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(32, 32, 32)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(bgLayout.createSequentialGroup()
-                            .addComponent(jLabel9)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtlongitud1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(txtancho1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtlongitud2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
+                            .addComponent(jLabel9)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel10))
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(txtlongitud3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtancho2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jLabel4))
-                .addGap(3, 3, 3)
+                            .addComponent(jLabel8))
+                        .addGap(24, 24, 24)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtlongitud1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtancho1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtaltura1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)))
+                    .addComponent(jLabel12))
+                .addGap(13, 13, 13)
                 .addComponent(btnOrtoedro1)
-                .addGap(33, 33, 33))
+                .addGap(22, 22, 22))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,6 +263,10 @@ public class prismaTriangular extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtancho1ActionPerformed
 
+    private void txtaltura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaltura1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtaltura1ActionPerformed
+
     private void txtlongitud1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtlongitud1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtlongitud1ActionPerformed
@@ -311,18 +274,6 @@ public class prismaTriangular extends javax.swing.JPanel {
     private void btn_Regresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Regresar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_Regresar1ActionPerformed
-
-    private void txtlongitud2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtlongitud2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtlongitud2ActionPerformed
-
-    private void txtlongitud3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtlongitud3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtlongitud3ActionPerformed
-
-    private void txtancho2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtancho2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtancho2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -335,21 +286,18 @@ public class prismaTriangular extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private java.awt.TextField txtaltura;
+    private java.awt.TextField txtaltura1;
     private java.awt.TextField txtancho;
     private java.awt.TextField txtancho1;
-    private java.awt.TextField txtancho2;
     private java.awt.TextField txtlongitud;
     private java.awt.TextField txtlongitud1;
-    private java.awt.TextField txtlongitud2;
-    private java.awt.TextField txtlongitud3;
     // End of variables declaration//GEN-END:variables
 }

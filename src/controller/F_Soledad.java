@@ -28,11 +28,6 @@ public class F_Soledad {
     public static float ejecutarPiramideCuadrada(float a, float h) { // a = base - h = altura
         return (float) (Math.pow(a, 2) + (2 * a) * Math.sqrt((Math.pow(a, 2) / 4) + Math.pow(h, 2)));
     }
-    
-    
-    
-    
-    
     public static float areaBaseDodecagonal(float a) { // a longitud de un lado
         return (float) (3 * (2 + Math.sqrt(3)) * Math.pow(a, 2));
     }

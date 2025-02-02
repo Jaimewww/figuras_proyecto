@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package view;
+package view.FSoledad;
 
 import fonts.Fonts;
 
@@ -10,12 +10,12 @@ import fonts.Fonts;
  *
  * @author JAIMEUNL
  */
-public class semiesfera extends javax.swing.JPanel {
+public class tetraedro extends javax.swing.JPanel {
 
     /**
      * Creates new form Menu_Figuras
      */
-    public semiesfera() {
+    public tetraedro() {
         initComponents();
         btn_Regresar.setVisible(true);
     }
@@ -45,7 +45,7 @@ public class semiesfera extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("AREA SEMIESFERA");
+        jLabel3.setText("VOLUMEN TETRAEDRO");
 
         btn_Regresar.setText("Regresar");
         btn_Regresar.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 15));
@@ -58,7 +58,7 @@ public class semiesfera extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("INGRESE EL VALOR DEL RADIO: ");
+        jLabel1.setText("INGRESE EL VALOR DE LA ARISTA: ");
 
         txtAOctaedro.setBackground(new java.awt.Color(153, 153, 255));
         txtAOctaedro.addActionListener(new java.awt.event.ActionListener() {
@@ -75,57 +75,56 @@ public class semiesfera extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/semiesfera.gif"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/arista.png"))); // NOI18N
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addContainerGap(146, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
-                .addComponent(btn_Regresar)
-                .addGap(28, 28, 28))
             .addGroup(bgLayout.createSequentialGroup()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAreaOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(86, 86, 86))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addContainerGap(98, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addComponent(txtAOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(bgLayout.createSequentialGroup()
                                 .addGap(28, 28, 28)
-                                .addComponent(jLabel1)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnAreaOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)))
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                                .addComponent(jLabel1))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(72, 72, 72)
+                                .addComponent(txtAOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_Regresar)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Regresar)
-                    .addComponent(jLabel3))
+                .addGap(17, 17, 17)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel1)
-                        .addGap(23, 23, 23)
-                        .addComponent(txtAOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                        .addComponent(btnAreaOctaedro)
-                        .addGap(45, 45, 45))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_Regresar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
-                        .addGap(20, 20, 20))))
+                        .addContainerGap(18, Short.MAX_VALUE))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel3)
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel1)
+                        .addGap(19, 19, 19)
+                        .addComponent(txtAOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAreaOctaedro)
+                        .addGap(31, 31, 31))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -136,7 +135,9 @@ public class semiesfera extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
