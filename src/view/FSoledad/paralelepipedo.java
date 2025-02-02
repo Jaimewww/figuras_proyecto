@@ -14,12 +14,12 @@ import view.Menu_Tridi_O_T;
  *
  * @author JAIMEUNL
  */
-public class piramideTriangular extends javax.swing.JPanel {
+public class paralelepipedo extends javax.swing.JPanel {
 
     /**
      * Creates new form Menu_Figuras
      */
-    public piramideTriangular() {
+    public paralelepipedo() {
         initComponents();
         btn_Regresar.setVisible(true);
     }
@@ -45,12 +45,14 @@ public class piramideTriangular extends javax.swing.JPanel {
         txtlongitud = new java.awt.TextField();
         txtancho = new java.awt.TextField();
         btnOrtoedro = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         bg = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtancho1 = new java.awt.TextField();
-        txtaltura1 = new java.awt.TextField();
-        txtlongitud1 = new java.awt.TextField();
+        txtladob = new java.awt.TextField();
+        txtladoc = new java.awt.TextField();
+        txtladoa = new java.awt.TextField();
         jLabel9 = new javax.swing.JLabel();
         btnOrtoedro1 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
@@ -111,42 +113,47 @@ public class piramideTriangular extends javax.swing.JPanel {
         btnOrtoedro.setBackground(new java.awt.Color(0, 102, 255));
         btnOrtoedro.setText("GENERAR");
 
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("TOTAL:");
+
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+
         setPreferredSize(new java.awt.Dimension(610, 240));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("ALTURA DEL TRIANGULO:");
+        jLabel7.setText("INGRESE EL LADO B:");
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("ALTURA LATERAL:");
+        jLabel8.setText("INGRESE EL LADO C:");
 
-        txtancho1.setBackground(new java.awt.Color(153, 153, 255));
-        txtancho1.addActionListener(new java.awt.event.ActionListener() {
+        txtladob.setBackground(new java.awt.Color(153, 153, 255));
+        txtladob.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtancho1ActionPerformed(evt);
+                txtladobActionPerformed(evt);
             }
         });
 
-        txtaltura1.setBackground(new java.awt.Color(153, 153, 255));
-        txtaltura1.addActionListener(new java.awt.event.ActionListener() {
+        txtladoc.setBackground(new java.awt.Color(153, 153, 255));
+        txtladoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtaltura1ActionPerformed(evt);
+                txtladocActionPerformed(evt);
             }
         });
 
-        txtlongitud1.setBackground(new java.awt.Color(153, 153, 255));
-        txtlongitud1.addActionListener(new java.awt.event.ActionListener() {
+        txtladoa.setBackground(new java.awt.Color(153, 153, 255));
+        txtladoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtlongitud1ActionPerformed(evt);
+                txtladoaActionPerformed(evt);
             }
         });
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("LONGITUD: ");
+        jLabel9.setText("INGRESE EL LADO A:");
 
         btnOrtoedro1.setBackground(new java.awt.Color(0, 102, 255));
         btnOrtoedro1.setText("GENERAR");
@@ -158,7 +165,7 @@ public class piramideTriangular extends javax.swing.JPanel {
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("AREA  PRIRAMIDE TRIANGULAR");
+        jLabel11.setText("AREA  PARALELEPIPEDO");
 
         btn_Regresar1.setText("Regresar");
         btn_Regresar.setFont(tipoFuente.fuente(tipoFuente.FSEX, 1, 15));
@@ -169,7 +176,7 @@ public class piramideTriangular extends javax.swing.JPanel {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gu.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/parale.png"))); // NOI18N
 
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("TOTAL:");
@@ -182,89 +189,83 @@ public class piramideTriangular extends javax.swing.JPanel {
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_Regresar1)
-                        .addGap(23, 23, 23))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(txtlongitud1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(34, 34, 34)
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(txtancho1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtaltura1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 27, Short.MAX_VALUE)))
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-            .addGroup(bgLayout.createSequentialGroup()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_Regresar1)
+                        .addGap(61, 61, 61))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel14)
-                        .addGap(18, 18, 18)
-                        .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60)
-                        .addComponent(btnOrtoedro1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel9)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel7)
+                                .addGap(39, 39, 39)
+                                .addComponent(jLabel8))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(bgLayout.createSequentialGroup()
+                                        .addComponent(jLabel14)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtladoa, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(bgLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtladob, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtladoc, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnOrtoedro1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(76, 76, 76)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addGap(29, 29, 29))))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_Regresar1))
+                .addGap(18, 18, 18)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addGap(19, 19, 19)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(btn_Regresar1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)
-                        .addComponent(btnOrtoedro1))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))
-                        .addGap(24, 24, 24)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtlongitud1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtancho1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtaltura1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(20, 20, 20))
+                            .addComponent(txtladoa, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtladob, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtladoc, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(53, 53, 53)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel14)
+                                    .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnOrtoedro1)
+                                .addGap(3, 3, 3))))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31))
         );
-
-        jLabel4.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -284,17 +285,17 @@ public class piramideTriangular extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtanchoActionPerformed
 
-    private void txtancho1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtancho1ActionPerformed
+    private void txtladobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtladobActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtancho1ActionPerformed
+    }//GEN-LAST:event_txtladobActionPerformed
 
-    private void txtaltura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaltura1ActionPerformed
+    private void txtladocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtladocActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtaltura1ActionPerformed
+    }//GEN-LAST:event_txtladocActionPerformed
 
-    private void txtlongitud1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtlongitud1ActionPerformed
+    private void txtladoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtladoaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtlongitud1ActionPerformed
+    }//GEN-LAST:event_txtladoaActionPerformed
 
     private void btn_Regresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Regresar1ActionPerformed
         // TODO add your handling code here:
@@ -304,8 +305,8 @@ public class piramideTriangular extends javax.swing.JPanel {
 
     private void btnOrtoedro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrtoedro1ActionPerformed
         // TODO add your handling code here:
-        if(Utiles.validate(txtlongitud1.getText()) && Utiles.validate(txtancho1.getText())&& Utiles.validate(txtaltura1.getText())){
-            Float resultado = F_Soledad.ejecutarPiramideTriangular(Utiles.transformStringFloat(txtlongitud1.getText()),Utiles.transformStringFloat(txtancho1.getText()),Utiles.transformStringFloat(txtaltura1.getText()));
+        if(Utiles.validate(txtladoa.getText()) && Utiles.validate(txtladob.getText())&& Utiles.validate(txtladoc.getText())){
+            Float resultado = F_Soledad.ejecutarParalelepipedo(Utiles.transformStringFloat(txtladoa.getText()),Utiles.transformStringFloat(txtladob.getText()),Utiles.transformStringFloat(txtladoc.getText()));
             txt_Result.setText(resultado.toString());
         }
     }//GEN-LAST:event_btnOrtoedro1ActionPerformed
@@ -319,6 +320,8 @@ public class piramideTriangular extends javax.swing.JPanel {
     private javax.swing.JButton btn_Regresar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -330,10 +333,10 @@ public class piramideTriangular extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel txt_Result;
     private java.awt.TextField txtaltura;
-    private java.awt.TextField txtaltura1;
     private java.awt.TextField txtancho;
-    private java.awt.TextField txtancho1;
+    private java.awt.TextField txtladoa;
+    private java.awt.TextField txtladob;
+    private java.awt.TextField txtladoc;
     private java.awt.TextField txtlongitud;
-    private java.awt.TextField txtlongitud1;
     // End of variables declaration//GEN-END:variables
 }
