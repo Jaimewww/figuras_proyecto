@@ -4,12 +4,15 @@
  */
 package view;
 
+import controller.F_Soledad;
 import javax.swing.UIManager;
 import fonts.Fonts;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import utiles.MusicLoader;
-
+import utiles.Utiles;
+import javax.swing.*;
 /**
  *
  * @author JAIMEUNL
@@ -162,12 +165,25 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_muteActionPerformed
 
     public static void showPanel(JPanel elim, JPanel p) {
-        p.setSize(610, 240);
-        p.setLocation(0, 0);
-        elim.removeAll();
-        elim.add(p, BorderLayout.CENTER);
-        elim.revalidate();
-        elim.repaint();
+        if (elim == null || p == null) {
+            throw new IllegalArgumentException("Los paneles no pueden ser nulos");
+        }
+
+        SwingUtilities.invokeLater(() -> {
+            elim.removeAll();
+
+            if (!(elim.getLayout() instanceof BorderLayout)) {
+                elim.setLayout(new BorderLayout());
+            }
+
+            elim.add(p, BorderLayout.CENTER);
+
+            elim.revalidate();
+            elim.repaint();
+
+            p.revalidate();
+            p.repaint();
+        });
     }
     
     public void setClippyText(String text){
@@ -178,49 +194,33 @@ public class Main_Frame extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    
 
-        /* Create and display the form */
+
+    public static void main(String[] args) {
+        // Configurar Windows Classic Look and Feel
+        try {
+            javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Crear y mostrar el formulario
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Main_Frame().setVisible(true);
             }
         });
-        
+
+        // Cargar música de fondo
         try {
-            
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel");
             MusicLoader.bucleMusica("src/resources/music_background.wav");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
-        
-        
     }
-    
+
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
