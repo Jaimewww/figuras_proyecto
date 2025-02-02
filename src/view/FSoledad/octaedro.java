@@ -4,7 +4,11 @@
  */
 package view.FSoledad;
 
+import controller.F_Soledad;
 import fonts.Fonts;
+import utiles.Utiles;
+import view.Main_Frame;
+import view.Menu_Tridi_O_T;
 
 /**
  *
@@ -36,8 +40,10 @@ public class octaedro extends javax.swing.JPanel {
         btn_Regresar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        txtAOctaedro = new java.awt.TextField();
+        txtarista = new java.awt.TextField();
         btnAreaOctaedro = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        txt_Result = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(610, 240));
 
@@ -63,10 +69,10 @@ public class octaedro extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("INGRESE EL VALOR DE LA ARISTA: ");
 
-        txtAOctaedro.setBackground(new java.awt.Color(153, 153, 255));
-        txtAOctaedro.addActionListener(new java.awt.event.ActionListener() {
+        txtarista.setBackground(new java.awt.Color(153, 153, 255));
+        txtarista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAOctaedroActionPerformed(evt);
+                txtaristaActionPerformed(evt);
             }
         });
 
@@ -77,6 +83,11 @@ public class octaedro extends javax.swing.JPanel {
                 btnAreaOctaedroActionPerformed(evt);
             }
         });
+
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("TOTAL:");
+
+        txt_Result.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -97,12 +108,17 @@ public class octaedro extends javax.swing.JPanel {
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(jLabel1))
-                            .addGroup(bgLayout.createSequentialGroup()
                                 .addGap(60, 60, 60)
-                                .addComponent(txtAOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(txtarista, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(bgLayout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel1))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)))
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
         );
@@ -113,17 +129,21 @@ public class octaedro extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Regresar)
                     .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(20, 20, 20)
-                        .addComponent(txtAOctaedro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                        .addComponent(btnAreaOctaedro)
+                        .addComponent(txtarista, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAreaOctaedro, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel6)
+                                .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(31, 31, 31))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
@@ -142,14 +162,20 @@ public class octaedro extends javax.swing.JPanel {
 
     private void btn_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegresarActionPerformed
         // TODO add your handling code here:
+        Menu_Tridi_O_T  menu_Tridi_O_T = new Menu_Tridi_O_T ();
+        Main_Frame.showPanel(bg, menu_Tridi_O_T);
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
-    private void txtAOctaedroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAOctaedroActionPerformed
+    private void txtaristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaristaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAOctaedroActionPerformed
+    }//GEN-LAST:event_txtaristaActionPerformed
 
     private void btnAreaOctaedroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaOctaedroActionPerformed
         // TODO add your handling code here:
+        if(Utiles.validate(txtarista.getText()) && Utiles.validate(txtarista.getText())){
+            Float resultado = F_Soledad.ejecutarOctaedroArea(Utiles.transformStringFloat(txtarista.getText()));
+            txt_Result.setText(resultado.toString());
+        }
 
     }//GEN-LAST:event_btnAreaOctaedroActionPerformed
 
@@ -161,6 +187,8 @@ public class octaedro extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private java.awt.TextField txtAOctaedro;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel txt_Result;
+    private java.awt.TextField txtarista;
     // End of variables declaration//GEN-END:variables
 }
